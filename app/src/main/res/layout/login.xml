@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="270dp"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User"
+            android:id="@+id/lbl_user"
+            android:textColor="#3da5f2"
+            android:textColorHighlight="#3da5f2"
+            android:textSize="17dp"
+            android:layout_marginTop="5dp" />
+
+        <EditText
+            android:layout_width="174dp"
+            android:layout_height="30dp"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/txt_user"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ffffff"
+            android:background="@drawable/login_textbar"
+            android:layout_weight="0.47"
+            android:layout_marginLeft="10dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:weightSum="1"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pass"
+            android:id="@+id/lbl_pass"
+            android:textColor="#3da5f2"
+            android:textColorHighlight="#3da5f2"
+            android:textSize="17dp"
+            android:layout_marginTop="5dp" />
+
+        <EditText
+            android:layout_width="170dp"
+            android:layout_height="30dp"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/editText"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ffffff"
+            android:background="@drawable/login_textbar"
+            android:layout_weight="0.45"
+            android:layout_marginLeft="12dp" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="119dp"
+        android:layout_height="37dp"
+        android:text="Login"
+        android:id="@+id/btn_login"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/login_button"
+        android:textColor="#086ab2"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:textColor="#3da5f2"
+        android:textColorHighlight="#3da5f2"
+        android:textSize="17dp" />
+
+</LinearLayout>
