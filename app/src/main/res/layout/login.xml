@@ -2,15 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_background"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:background="@drawable/login_background">
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="270dp"
+        android:layout_marginTop="300dp"
         android:weightSum="1">
 
         <TextView
@@ -30,10 +30,11 @@
             android:ems="10"
             android:id="@+id/txt_user"
             android:layout_gravity="center_horizontal"
-            android:textColor="#ffffff"
+            android:textColor="#494949"
             android:background="@drawable/login_textbar"
             android:layout_weight="0.47"
-            android:layout_marginLeft="10dp" />
+            android:layout_marginLeft="10dp"
+            android:paddingStart="15dp" />
 
     </LinearLayout>
 
@@ -63,10 +64,12 @@
             android:ems="10"
             android:id="@+id/editText"
             android:layout_gravity="center_horizontal"
-            android:textColor="#ffffff"
+            android:textColor="#494949"
             android:background="@drawable/login_textbar"
-            android:layout_weight="0.45"
-            android:layout_marginLeft="12dp" />
+            android:layout_weight="0.38"
+            android:layout_marginLeft="12dp"
+            android:paddingStart="15dp"
+            android:password="true" />
     </LinearLayout>
 
     <Button
@@ -90,6 +93,17 @@
         android:layout_marginTop="20dp"
         android:textColor="#3da5f2"
         android:textColorHighlight="#3da5f2"
-        android:textSize="17dp" />
+        android:textSize="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot my password"
+        android:id="@+id/textView2"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:textColor="#3da5f2"
+        android:textColorHighlight="#3da5f2"
+        android:textSize="15dp" />
 
 </LinearLayout>

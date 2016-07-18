@@ -1,9 +1,12 @@
 package com.bigbambu.jewmmunity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class Main extends AppCompatActivity {
 
@@ -11,6 +14,24 @@ public class Main extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+
+        CPublication publication;
+
+        ArrayList<CPublication> publications =  new ArrayList<CPublication>();
+
+        publication = new CPublication();
+        publication.setName("Android");
+        publication.setSummary("summary goes here");
+        publications.add(publication);
+
+        publication = new CPublication();
+        publication.setName("Blackberry");
+        publication.setSummary("summary goes here");
+        publications.add(publication);
+
+        ListView lista_publicaciones = (ListView)findViewById(R.id.lst_publicaciones);
+        lista_publicaciones.setAdapter(new MyAdapter(this, publications));
     }
 
     @Override
