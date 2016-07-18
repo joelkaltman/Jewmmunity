@@ -5,15 +5,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class Main extends AppCompatActivity {
+    TextView lbl_user;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+        lbl_user = (TextView) findViewById(R.id.lbl_user);
+
+        String nombre_usuario = getIntent().getStringExtra("usuario");
+        lbl_user.setText(nombre_usuario);
+
 
 
         CPublication publication;
