@@ -21,15 +21,85 @@
                 android:background="@drawable/profile_empty"
                 android:layout_margin="15dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Usuario"
-                android:id="@+id/lbl_user"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:textSize="20dp"
-                android:layout_marginTop="15dp" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="156dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Usuario"
+                    android:id="@+id/lbl_user"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:layout_marginTop="15dp" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/img_star"
+                        android:background="@drawable/icon_maguen_david" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="15"
+                        android:id="@+id/lbl_score"
+                        android:textColor="#ffffff"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="right">
+
+                <Button
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:id="@+id/btn_search"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/icon_search"
+                    android:textColor="#086ab2"
+                    android:textStyle="bold"
+                    android:layout_marginRight="10dp" />
+
+                <Button
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:id="@+id/btn_inbox"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/icon_inbox"
+                    android:textColor="#086ab2"
+                    android:textStyle="bold"
+                    android:layout_marginRight="10dp" />
+
+                <Button
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:id="@+id/btn_settings"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/icon_settings"
+                    android:textColor="#086ab2"
+                    android:textStyle="bold"
+                    android:layout_marginRight="10dp" />
+            </LinearLayout>
+
         </LinearLayout>
 
         <ListView

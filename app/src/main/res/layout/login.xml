@@ -32,7 +32,7 @@
             android:layout_gravity="center_horizontal"
             android:textColor="#494949"
             android:background="@drawable/login_textbar"
-            android:layout_weight="0.47"
+            android:layout_weight="0.41"
             android:layout_marginLeft="10dp"
             android:paddingStart="15dp" />
 
@@ -84,26 +84,42 @@
         style="@style/Widget.AppCompat.Button.Borderless"
         android:textStyle="bold" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Register"
-        android:id="@+id/textView"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
-        android:textColor="#3da5f2"
-        android:textColorHighlight="#3da5f2"
-        android:textSize="15dp" />
+        android:gravity="center">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Forgot my password"
-        android:id="@+id/textView2"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:textColor="#3da5f2"
-        android:textColorHighlight="#3da5f2"
-        android:textSize="15dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:id="@+id/textView"
+            android:textColor="#3da5f2"
+            android:textColorHighlight="#3da5f2"
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forgot my password"
+            android:id="@+id/textView2"
+            android:textColor="#3da5f2"
+            android:textColorHighlight="#3da5f2"
+            android:textSize="15dp"
+            android:layout_marginLeft="25dp" />
+
+        <Button
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/button"
+            android:background="@drawable/icon_settings"
+            android:textColor="#086ab2"
+            android:textStyle="bold"
+            android:layout_marginLeft="25dp" />
+    </LinearLayout>
 
 </LinearLayout>

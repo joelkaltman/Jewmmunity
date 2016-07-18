@@ -30,13 +30,13 @@ public class Main extends AppCompatActivity {
         ArrayList<CPublication> publications =  new ArrayList<CPublication>();
 
         publication = new CPublication();
-        publication.setName("Android");
-        publication.setSummary("summary goes here");
+        publication.setName("Publicacion1");
+        publication.setSummary("Descripcion de publicacion");
         publications.add(publication);
 
         publication = new CPublication();
-        publication.setName("Blackberry");
-        publication.setSummary("summary goes here");
+        publication.setName("Publicacion2");
+        publication.setSummary("Descripcion de publicacion");
         publications.add(publication);
 
         ListView lista_publicaciones = (ListView)findViewById(R.id.lst_publicaciones);
