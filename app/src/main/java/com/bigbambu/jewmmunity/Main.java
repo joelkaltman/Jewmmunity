@@ -39,6 +39,26 @@ public class Main extends AppCompatActivity {
         publication.setSummary("Descripcion de publicacion");
         publications.add(publication);
 
+        publication = new CPublication();
+        publication.setName("Publicacion2");
+        publication.setSummary("Descripcion de publicacion");
+        publications.add(publication);
+
+        publication = new CPublication();
+        publication.setName("Publicacion2");
+        publication.setSummary("Descripcion de publicacion");
+        publications.add(publication);
+
+        publication = new CPublication();
+        publication.setName("Publicacion2");
+        publication.setSummary("Descripcion de publicacion");
+        publications.add(publication);
+
+        publication = new CPublication();
+        publication.setName("Publicacion2");
+        publication.setSummary("Descripcion de publicacion");
+        publications.add(publication);
+
         ListView lista_publicaciones = (ListView)findViewById(R.id.lst_publicaciones);
         lista_publicaciones.setAdapter(new MyAdapter(this, publications));
     }

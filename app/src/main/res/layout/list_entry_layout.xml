@@ -5,18 +5,73 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/list_entry_title"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp" >
-    </TextView>
+        android:background="#ffffff"
+        android:layout_margin="10dp">
 
-    <TextView
-        android:id="@+id/list_entry_summary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="10dp" >
-    </TextView>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/list_entry_image"
+                android:background="@drawable/profile_empty"
+                android:layout_margin="5dp"
+                android:layout_weight="0.09" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/list_entry_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="Titulo"
+                    android:layout_margin="5dp"
+                    android:textColor="#919191">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/list_entry_summary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"
+                    android:text="Descripcion"
+                    android:layout_margin="5dp"
+                    android:textColor="#919191">
+                </TextView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right">
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/list_entry_like"
+                android:background="@drawable/icon_settings"
+                android:textColor="#086ab2"
+                android:textStyle="bold"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="20dp" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>
