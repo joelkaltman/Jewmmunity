@@ -48,9 +48,12 @@ public class MyAdapter extends BaseAdapter implements ListAdapter {
 
         TextView name = (TextView)convertView.findViewById(R.id.list_entry_title);
         TextView summary=(TextView)convertView.findViewById(R.id.list_entry_summary);
+        TextView user=(TextView)convertView.findViewById(R.id.list_entry_user);
+
 
         name.setText(publications.get(position).getName());
         summary.setText(publications.get(position).getSummary());
+        user.setText(publications.get(position).getUser());
 
         return convertView;
     }

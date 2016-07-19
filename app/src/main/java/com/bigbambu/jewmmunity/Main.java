@@ -31,32 +31,38 @@ public class Main extends AppCompatActivity {
 
         publication = new CPublication();
         publication.setName("Publicacion1");
-        publication.setSummary("Descripcion de publicacion");
+        publication.setSummary("Descripcion1");
+        publication.setUser("Usuario1");
         publications.add(publication);
 
         publication = new CPublication();
         publication.setName("Publicacion2");
-        publication.setSummary("Descripcion de publicacion");
+        publication.setSummary("Descripcion2");
+        publication.setUser("Usuario2");
         publications.add(publication);
 
         publication = new CPublication();
         publication.setName("Publicacion2");
-        publication.setSummary("Descripcion de publicacion");
+        publication.setSummary("Descripcion2");
+        publication.setUser("Usuario2");
         publications.add(publication);
 
         publication = new CPublication();
         publication.setName("Publicacion2");
-        publication.setSummary("Descripcion de publicacion");
+        publication.setSummary("Descripcion2");
+        publication.setUser("Usuario2");
         publications.add(publication);
 
         publication = new CPublication();
         publication.setName("Publicacion2");
-        publication.setSummary("Descripcion de publicacion");
+        publication.setSummary("Descripcion2");
+        publication.setUser("Usuario2");
         publications.add(publication);
 
         publication = new CPublication();
         publication.setName("Publicacion2");
-        publication.setSummary("Descripcion de publicacion");
+        publication.setSummary("Descripcion2");
+        publication.setUser("Usuario2");
         publications.add(publication);
 
         ListView lista_publicaciones = (ListView)findViewById(R.id.lst_publicaciones);

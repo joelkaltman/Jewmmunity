@@ -6,6 +6,7 @@ package com.bigbambu.jewmmunity;
 public class CPublication {
     String name;
     String summary;
+    String user;
 
     public String getName() {
         return name;
@@ -21,6 +22,14 @@ public class CPublication {
 
     public void setSummary(String summary) {
         this.summary = summary;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
     }
 
 }
