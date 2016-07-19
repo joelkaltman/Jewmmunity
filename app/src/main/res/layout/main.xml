@@ -19,7 +19,10 @@
                 android:layout_height="50dp"
                 android:id="@+id/img_profile"
                 android:background="@drawable/profile_empty"
-                android:layout_margin="15dp" />
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="10dp" />
 
             <LinearLayout
                 android:orientation="vertical"
@@ -102,11 +105,59 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="#02366b">
+
+            <ImageButton
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/imageButton"
+                android:background="@drawable/icon_home"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/imageButton2"
+                android:background="@drawable/icon_photos"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="27dp"
+                android:id="@+id/imageButton3"
+                android:background="@drawable/icon_community"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp" />
+
+            <ImageButton
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/imageButton4"
+                android:background="@drawable/icon_event"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
+        </LinearLayout>
+
         <ListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/lst_publicaciones"
             android:layout_weight="1"
-            android:background="@drawable/background" />
+            android:background="#0260b2" />
     </LinearLayout>
 </LinearLayout>
