@@ -105,53 +105,70 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
+        <HorizontalScrollView
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:background="#02366b">
+            android:id="@+id/horizontalScrollView"
+            android:background="#034680"
+            android:scrollbarStyle="insideOverlay">
 
-            <ImageButton
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:id="@+id/imageButton"
-                android:background="@drawable/icon_home"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#054781">
 
-            <ImageButton
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:id="@+id/imageButton2"
-                android:background="@drawable/icon_photos"
-                android:layout_marginRight="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp" />
+                <ImageButton
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:id="@+id/imageButton"
+                    android:background="@drawable/icon_home"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp" />
 
-            <ImageButton
-                android:layout_width="30dp"
-                android:layout_height="27dp"
-                android:id="@+id/imageButton3"
-                android:background="@drawable/icon_community"
-                android:layout_marginRight="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp" />
+                <ImageButton
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/imageButton2"
+                    android:background="@drawable/icon_photos"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp" />
 
-            <ImageButton
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:id="@+id/imageButton4"
-                android:background="@drawable/icon_event"
-                android:layout_marginRight="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp" />
-        </LinearLayout>
+                <ImageButton
+                    android:layout_width="30dp"
+                    android:layout_height="27dp"
+                    android:id="@+id/imageButton3"
+                    android:background="@drawable/icon_community"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp" />
+
+                <ImageButton
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:id="@+id/imageButton4"
+                    android:background="@drawable/icon_event"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp" />
+
+                <ImageButton
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:id="@+id/imageButton5"
+                    android:background="@drawable/icon_event"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp" />
+            </LinearLayout>
+        </HorizontalScrollView>
 
         <ListView
             android:layout_width="match_parent"
@@ -160,4 +177,5 @@
             android:layout_weight="1"
             android:background="#0260b2" />
     </LinearLayout>
+
 </LinearLayout>
