@@ -20,49 +20,38 @@ public class Main extends AppCompatActivity {
 
         lbl_user = (TextView) findViewById(R.id.lbl_user);
 
-        String nombre_usuario = getIntent().getStringExtra("usuario");
-        lbl_user.setText(nombre_usuario);
+        CUsuario usuario_actual = CUsuario.generarUsuario(getIntent().getStringExtra("usuario"));
+        lbl_user.setText(usuario_actual.getUsuario());
 
 
 
-        CPublication publication;
+        CUsuario usuario_publicador = CUsuario.generarUsuario("Usuario1");
+        CPublicacion publication;
 
-        ArrayList<CPublication> publications =  new ArrayList<CPublication>();
+        ArrayList<CPublicacion> publications =  new ArrayList<CPublicacion>();
 
-        publication = new CPublication();
-        publication.setName("Publicacion1");
-        publication.setSummary("Descripcion1");
-        publication.setUser("Usuario1");
+        publication = CPublicacion.generarPublicacion(usuario_publicador);
+        publication.setImagen(getResources().getDrawable(R.drawable.default_photo));
         publications.add(publication);
 
-        publication = new CPublication();
-        publication.setName("Publicacion2");
-        publication.setSummary("Descripcion2");
-        publication.setUser("Usuario2");
+        publication = CPublicacion.generarPublicacion(usuario_publicador);
+        publication.setImagen(getResources().getDrawable(R.drawable.default_photo));
         publications.add(publication);
 
-        publication = new CPublication();
-        publication.setName("Publicacion2");
-        publication.setSummary("Descripcion2");
-        publication.setUser("Usuario2");
+        publication = CPublicacion.generarPublicacion(usuario_publicador);
+        publication.setImagen(getResources().getDrawable(R.drawable.default_photo));
         publications.add(publication);
 
-        publication = new CPublication();
-        publication.setName("Publicacion2");
-        publication.setSummary("Descripcion2");
-        publication.setUser("Usuario2");
+        publication = CPublicacion.generarPublicacion(usuario_publicador);
+        publication.setImagen(getResources().getDrawable(R.drawable.default_photo));
         publications.add(publication);
 
-        publication = new CPublication();
-        publication.setName("Publicacion2");
-        publication.setSummary("Descripcion2");
-        publication.setUser("Usuario2");
+        publication = CPublicacion.generarPublicacion(usuario_publicador);
+        publication.setImagen(getResources().getDrawable(R.drawable.default_photo));
         publications.add(publication);
 
-        publication = new CPublication();
-        publication.setName("Publicacion2");
-        publication.setSummary("Descripcion2");
-        publication.setUser("Usuario2");
+        publication = CPublicacion.generarPublicacion(usuario_publicador);
+        publication.setImagen(getResources().getDrawable(R.drawable.default_photo));
         publications.add(publication);
 
         ListView lista_publicaciones = (ListView)findViewById(R.id.lst_publicaciones);

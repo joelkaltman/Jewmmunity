@@ -20,7 +20,8 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
 
                 <ImageView
                     android:layout_width="30dp"
@@ -31,12 +32,27 @@
 
                 <TextView
                     android:id="@+id/list_entry_user"
-                    android:layout_width="fill_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
                     android:text="Usuario"
-                    android:layout_margin="5dp"
                     android:textColor="#919191" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|right">
+
+                    <TextView
+                        android:id="@+id/list_entry_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10dp"
+                        android:text="01/01/2016"
+                        android:textColor="#919191"
+                        android:layout_margin="5dp" />
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -45,14 +61,15 @@
                 android:layout_height="200dp"
                 android:id="@+id/list_entry_image"
                 android:background="@drawable/default_photo"
-                android:layout_margin="5dp"
-                android:layout_weight="3.46" />
+                android:layout_weight="3.46"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp" />
 
             <TextView
                 android:id="@+id/list_entry_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:text="Titulo"
                 android:layout_margin="5dp"
                 android:textColor="#919191">
@@ -62,10 +79,12 @@
                 android:id="@+id/list_entry_summary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="10dp"
+                android:textSize="15dp"
                 android:text="Descripcion"
-                android:layout_margin="5dp"
-                android:textColor="#919191">
+                android:textColor="#919191"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp">
             </TextView>
 
         </LinearLayout>
@@ -79,7 +98,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:text="comentar"
+                android:text="comment"
                 android:id="@+id/list_entry_btn_comment"
                 style="@style/Base.Widget.AppCompat.Button.Borderless"
                 android:background="#00ffffff"

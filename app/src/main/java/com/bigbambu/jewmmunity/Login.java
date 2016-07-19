@@ -12,6 +12,7 @@ import android.widget.TextView;
  */
 public class Login extends AppCompatActivity {
     Button btn_login;
+    Button btn_settings;
     TextView txt_user;
 
     @Override
@@ -20,6 +21,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.login);
 
         btn_login = (Button)findViewById(R.id.btn_login);
+        btn_settings = (Button)findViewById(R.id.btn_settings);
         txt_user = (TextView) findViewById(R.id.txt_user);
 
         btn_login.setOnClickListener(new View.OnClickListener() {

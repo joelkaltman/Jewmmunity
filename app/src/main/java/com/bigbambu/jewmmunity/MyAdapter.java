@@ -1,10 +1,12 @@
 package com.bigbambu.jewmmunity;
 
 import android.content.Context;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
@@ -16,9 +18,9 @@ import java.util.ArrayList;
 public class MyAdapter extends BaseAdapter implements ListAdapter {
 
     private Context context;
-    private ArrayList<CPublication> publications;
+    private ArrayList<CPublicacion> publications;
 
-    public MyAdapter(Context context, ArrayList<CPublication> mobiles) {
+    public MyAdapter(Context context, ArrayList<CPublicacion> mobiles) {
         this.context = context;
         this.publications = mobiles;
     }
@@ -49,11 +51,15 @@ public class MyAdapter extends BaseAdapter implements ListAdapter {
         TextView name = (TextView)convertView.findViewById(R.id.list_entry_title);
         TextView summary=(TextView)convertView.findViewById(R.id.list_entry_summary);
         TextView user=(TextView)convertView.findViewById(R.id.list_entry_user);
+        ImageView imagen = (ImageView)convertView.findViewById(R.id.list_entry_image);
+        TextView date = (TextView)convertView.findViewById(R.id.list_entry_date);
 
 
-        name.setText(publications.get(position).getName());
-        summary.setText(publications.get(position).getSummary());
-        user.setText(publications.get(position).getUser());
+        name.setText(publications.get(position).getTitulo());
+        summary.setText(publications.get(position).getDescripcion());
+        user.setText(publications.get(position).getUsuario().getNombre());
+        date.setText(DateFormat.format("dd/mm/yyyy", publications.get(position).getFecha()).toString());
+        imagen.setBackground(publications.get(position).getImagen());
 
         return convertView;
     }
