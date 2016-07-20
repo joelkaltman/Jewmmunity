@@ -1,6 +1,5 @@
 package com.bigbambu.jewmmunity;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -14,9 +13,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class Main extends AppCompatActivity {
-    Context contexto;
+    Main contexto;
     RelativeLayout vista_inferior;
     TextView lbl_user;
+    TextView lbl_puntaje;
     ImageButton btn_home;
     ImageButton btn_fotos;
 
@@ -31,47 +31,47 @@ public class Main extends AppCompatActivity {
         // Contenido layout
         vista_inferior = (RelativeLayout) findViewById(R.id.layout_relativo);
         lbl_user = (TextView) findViewById(R.id.lbl_user);
+        lbl_puntaje = (TextView) findViewById(R.id.lbl_score);
         btn_home = (ImageButton) findViewById(R.id.btn_home);
         btn_fotos = (ImageButton) findViewById(R.id.btn_fotos);
 
         // Usuario Actual
-        CUsuario usuario_actual = CUsuario.generarUsuario(getIntent().getStringExtra("usuario"));
-        lbl_user.setText(usuario_actual.getUsuario());
-
-        // Usuario ajeno
-        CUsuario usuario_publicador = CUsuario.generarUsuario("Usuario1");
-
-        // Publicaciones
-        ArrayList<CPublicacion> publicaciones =  new ArrayList<CPublicacion>();
-
-        for(int i = 0; i < 10; i++) {
-            CPublicacion publicacion = CPublicacion.generarPublicacion(usuario_publicador);
-            publicacion.setImagen(getResources().getDrawable(R.drawable.default_photo));
-            publicaciones.add(publicacion);
+        String usuario_ingresado = getIntent().getStringExtra("usuario");
+        if(usuario_ingresado.isEmpty()){
+            usuario_ingresado = "miUsuario";
         }
+        CUsuario usuario_actual = CUsuario.generarUsuario(usuario_ingresado);
+        lbl_user.setText(usuario_actual.getUsuario());
+        lbl_puntaje.setText(String.valueOf(usuario_actual.getPuntaje()));
 
         // Contenido de vista inferior (default: home)
+        btn_home.setBackgroundResource(R.drawable.icon_home_selected);
         vista_inferior.removeAllViews();
-        vista_inferior.addView(View.inflate(this, R.layout.view_publicaciones, null));
-
-        // Cargo layout de publicaciones
-        ListView lista_publicaciones = (ListView)findViewById(R.id.lst_publicaciones);
-        lista_publicaciones.setAdapter(new MyAdapter(contexto, publicaciones));
+        vista_inferior.addView(View.inflate(contexto, R.layout.view_publicaciones, null));
+        this.cargarViewPublicaciones(contexto);
 
         // Listeners
         btn_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                btn_home.setBackgroundResource(R.drawable.icon_home_selected);
+                btn_fotos.setBackgroundResource(R.drawable.icon_photos);
+
                 vista_inferior.removeAllViews();
                 vista_inferior.addView(View.inflate(contexto, R.layout.view_publicaciones, null));
+                Main.cargarViewPublicaciones(contexto);
             }
         });
 
         btn_fotos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                btn_home.setBackgroundResource(R.drawable.icon_home);
+                btn_fotos.setBackgroundResource(R.drawable.icon_photos_selected);
+
                 vista_inferior.removeAllViews();
                 vista_inferior.addView(View.inflate(contexto, R.layout.view_fotos, null));
+                Main.cargarViewFotos(contexto);
             }
         });
 
@@ -102,4 +102,30 @@ public class Main extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+    public static void cargarViewPublicaciones(Main contexto)
+    {
+        // Usuario ajeno
+        CUsuario usuario_publicador = CUsuario.generarUsuario("Usuario1");
+
+        // Publicaciones
+        ArrayList<CPublicacion> publicaciones =  new ArrayList<CPublicacion>();
+
+        for(int i = 0; i < 10; i++) {
+            CPublicacion publicacion = CPublicacion.generarPublicacion(usuario_publicador);
+            publicacion.setImagen(contexto.getResources().getDrawable(R.drawable.default_photo));
+            publicaciones.add(publicacion);
+        }
+
+        // Cargo view_publicaciones
+        ListView lista_publicaciones = (ListView)contexto.findViewById(R.id.lst_publicaciones);
+        lista_publicaciones.setAdapter(new MyAdapter(contexto, publicaciones));
+    }
+
+    public static void cargarViewFotos(Main contexto)
+    {
+
+    }
+
 }

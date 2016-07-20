@@ -110,7 +110,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/horizontalScrollView"
             android:background="#034680"
-            android:scrollbarStyle="insideOverlay">
+            android:scrollbarStyle="insideOverlay"
+            android:scrollbars="none">
 
             <LinearLayout
                 android:orientation="horizontal"

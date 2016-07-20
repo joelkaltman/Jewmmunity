@@ -2,14 +2,17 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <ListView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/lst_publicaciones"
-        android:layout_weight="1"
-        android:background="#0260b2"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="0dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="0dp" />
+        android:layout_height="match_parent">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lst_publicaciones"
+            android:layout_weight="1"
+            android:background="#0260b2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" />
+    </FrameLayout>
 </RelativeLayout>
