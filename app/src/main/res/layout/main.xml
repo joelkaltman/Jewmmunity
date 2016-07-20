@@ -121,7 +121,7 @@
                 <ImageButton
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:id="@+id/imageButton"
+                    android:id="@+id/btn_home"
                     android:background="@drawable/icon_home"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
@@ -131,7 +131,7 @@
                 <ImageButton
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:id="@+id/imageButton2"
+                    android:id="@+id/btn_fotos"
                     android:background="@drawable/icon_photos"
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="20dp"
@@ -141,7 +141,7 @@
                 <ImageButton
                     android:layout_width="30dp"
                     android:layout_height="27dp"
-                    android:id="@+id/imageButton3"
+                    android:id="@+id/btn_miscomunidad"
                     android:background="@drawable/icon_community"
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="20dp"
@@ -151,7 +151,7 @@
                 <ImageButton
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:id="@+id/imageButton4"
+                    android:id="@+id/btn_miseventos"
                     android:background="@drawable/icon_event"
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="20dp"
@@ -161,7 +161,7 @@
                 <ImageButton
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:id="@+id/imageButton7"
+                    android:id="@+id/btn_buscar_gente"
                     android:background="@drawable/icon_tinder"
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="20dp"
@@ -171,7 +171,7 @@
                 <ImageButton
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:id="@+id/imageButton6"
+                    android:id="@+id/btn_buscar_comunidades"
                     android:background="@drawable/icon_search_community"
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="20dp"
@@ -181,7 +181,7 @@
                 <ImageButton
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:id="@+id/imageButton5"
+                    android:id="@+id/btn_buscar_eventos"
                     android:background="@drawable/icon_search_event"
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="20dp"
@@ -190,12 +190,19 @@
             </LinearLayout>
         </HorizontalScrollView>
 
-        <ListView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/lst_publicaciones"
-            android:layout_weight="1"
-            android:background="#0260b2" />
+            android:layout_height="match_parent"
+            android:id="@+id/layout_relativo">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/frm_general">
+
+            </FrameLayout>
+        </RelativeLayout>
+
     </LinearLayout>
 
 </LinearLayout>
