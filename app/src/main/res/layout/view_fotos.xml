@@ -18,7 +18,8 @@
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
             android:background="#005fb2"
-            android:gravity="center">
+            android:gravity="center"
+            android:id="@+id/layout_fotos">
 
             <TableRow
                 android:layout_width="match_parent"

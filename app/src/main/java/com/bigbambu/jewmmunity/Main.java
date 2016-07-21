@@ -135,6 +135,32 @@ public class Main extends AppCompatActivity {
 
     public static void cargarViewFotos(Main contexto)
     {
+        //Agregar imagenes dinamicamente al tablelayout
+        /*TableLayout matriz_fotos = (TableLayout)contexto.findViewById(R.id.layout_fotos);
+
+        ImageView una_imagen = new ImageView(contexto);
+        una_imagen.setImageDrawable(contexto.getResources().getDrawable(R.drawable.default_photo));
+
+        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(100, 100);
+        lp.setMargins(5, 5, 5, 5);
+        una_imagen.setLayoutParams(lp);
+
+        Boolean fue_agregada = false;
+        for(int i = 0, j = matriz_fotos.getChildCount(); i < j; i++) {
+            View view = matriz_fotos.getChildAt(i);
+            if (view instanceof TableRow) {
+                TableRow fila = (TableRow) view;
+                if( fila.getChildCount() < 3 ) {
+                    fila.addView(una_imagen);
+                    fue_agregada = true;
+                }
+            }
+        }
+        if(!fue_agregada){
+            TableRow nueva_fila = new TableRow(contexto);
+            matriz_fotos.addView(nueva_fila);
+            nueva_fila.addView(una_imagen);
+        }*/
 
     }
 
