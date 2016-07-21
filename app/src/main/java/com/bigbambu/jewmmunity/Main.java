@@ -1,10 +1,12 @@
 package com.bigbambu.jewmmunity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -19,6 +21,7 @@ public class Main extends AppCompatActivity {
     TextView lbl_puntaje;
     ImageButton btn_home;
     ImageButton btn_fotos;
+    Button btn_settings;
 
 
     @Override
@@ -34,6 +37,8 @@ public class Main extends AppCompatActivity {
         lbl_puntaje = (TextView) findViewById(R.id.lbl_score);
         btn_home = (ImageButton) findViewById(R.id.btn_home);
         btn_fotos = (ImageButton) findViewById(R.id.btn_fotos);
+        btn_settings = (Button) findViewById(R.id.btn_settings);
+
 
         // Usuario Actual
         String usuario_ingresado = getIntent().getStringExtra("usuario");
@@ -76,8 +81,13 @@ public class Main extends AppCompatActivity {
         });
 
 
-
-
+        btn_settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(Main.this, Settings.class);
+                Main.this.startActivity(myIntent);
+            }
+        });
 
     }
 

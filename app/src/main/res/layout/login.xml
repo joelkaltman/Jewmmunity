@@ -62,7 +62,7 @@
             android:layout_height="30dp"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/editText"
+            android:id="@+id/txt_password"
             android:layout_gravity="center_horizontal"
             android:textColor="#494949"
             android:background="@drawable/login_textbar"
@@ -92,30 +92,33 @@
         android:layout_marginTop="20dp"
         android:gravity="center">
 
-        <TextView
+        <Button
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Register"
-            android:id="@+id/textView"
-            android:textColor="#3da5f2"
-            android:textColorHighlight="#3da5f2"
-            android:textSize="15dp" />
+            android:id="@+id/btn_register_login"
+            android:textColor="#3fa3eb"
+            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp" />
 
-        <TextView
+        <Button
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Forgot my password"
-            android:id="@+id/textView2"
-            android:textColor="#3da5f2"
-            android:textColorHighlight="#3da5f2"
-            android:textSize="15dp"
-            android:layout_marginLeft="25dp" />
+            android:text="Forgot password"
+            android:id="@+id/btn_forgot_login"
+            android:textColor="#3fa3eb"
+            android:textStyle="bold"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp" />
 
         <Button
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:id="@+id/button"
+            android:id="@+id/btn_settings_login"
             android:background="@drawable/icon_settings"
             android:textColor="#086ab2"
             android:textStyle="bold"

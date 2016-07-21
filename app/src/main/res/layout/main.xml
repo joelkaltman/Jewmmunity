@@ -188,6 +188,16 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp" />
+
+                <ImageButton
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:id="@+id/btn_puntaje"
+                    android:background="@drawable/icon_score"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp" />
             </LinearLayout>
         </HorizontalScrollView>
 
@@ -202,6 +212,7 @@
                 android:id="@+id/frm_general">
 
             </FrameLayout>
+
         </RelativeLayout>
 
     </LinearLayout>
