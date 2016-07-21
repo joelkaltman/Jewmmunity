@@ -112,7 +112,8 @@
                 android:id="@+id/editText5"
                 android:layout_weight="1"
                 android:textColor="#ffffff"
-                android:layout_column="3" />
+                android:layout_column="3"
+                android:inputType="textPassword" />
         </TableRow>
 
         <LinearLayout
@@ -169,6 +170,15 @@
                 android:textColor="#ffffff"
                 android:layout_column="1" />
 
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText"
+                android:layout_weight="1"
+                android:textColor="#ffffff"
+                android:layout_column="3"
+                android:inputType="date" />
+
         </TableRow>
 
         <TableRow
@@ -183,6 +193,14 @@
                 android:textSize="18dp"
                 android:textColor="#ffffff"
                 android:layout_column="1" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText6"
+                android:layout_weight="1"
+                android:textColor="#ffffff"
+                android:layout_column="3" />
 
         </TableRow>
 
