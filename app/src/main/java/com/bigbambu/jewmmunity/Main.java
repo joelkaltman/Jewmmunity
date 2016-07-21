@@ -1,5 +1,6 @@
 package com.bigbambu.jewmmunity;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,11 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
 import java.util.ArrayList;
 
 public class Main extends AppCompatActivity {
@@ -21,8 +27,10 @@ public class Main extends AppCompatActivity {
     TextView lbl_puntaje;
     ImageButton btn_home;
     ImageButton btn_fotos;
+    ImageButton btn_buscar_eventos;
     Button btn_settings;
 
+    private static GoogleMap mMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +45,7 @@ public class Main extends AppCompatActivity {
         lbl_puntaje = (TextView) findViewById(R.id.lbl_score);
         btn_home = (ImageButton) findViewById(R.id.btn_home);
         btn_fotos = (ImageButton) findViewById(R.id.btn_fotos);
+        btn_buscar_eventos = (ImageButton) findViewById(R.id.btn_buscar_eventos);
         btn_settings = (Button) findViewById(R.id.btn_settings);
 
 
@@ -61,6 +70,7 @@ public class Main extends AppCompatActivity {
             public void onClick(View view) {
                 btn_home.setBackgroundResource(R.drawable.icon_home_selected);
                 btn_fotos.setBackgroundResource(R.drawable.icon_photos);
+                btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event);
 
                 vista_inferior.removeAllViews();
                 vista_inferior.addView(View.inflate(contexto, R.layout.view_publicaciones, null));
@@ -73,6 +83,7 @@ public class Main extends AppCompatActivity {
             public void onClick(View view) {
                 btn_home.setBackgroundResource(R.drawable.icon_home);
                 btn_fotos.setBackgroundResource(R.drawable.icon_photos_selected);
+                btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event);
 
                 vista_inferior.removeAllViews();
                 vista_inferior.addView(View.inflate(contexto, R.layout.view_fotos, null));
@@ -80,6 +91,18 @@ public class Main extends AppCompatActivity {
             }
         });
 
+        btn_buscar_eventos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btn_home.setBackgroundResource(R.drawable.icon_home);
+                btn_fotos.setBackgroundResource(R.drawable.icon_photos);
+                btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event_selected);
+
+                Main.cargarViewBuscarEventos(contexto);
+                vista_inferior.removeAllViews();
+                vista_inferior.addView(View.inflate(contexto, R.layout.view_buscar_evento, null));
+            }
+        });
 
         btn_settings.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -163,5 +186,23 @@ public class Main extends AppCompatActivity {
         }*/
 
     }
+
+    public static void cargarViewBuscarEventos(Main contexto)
+    {
+        if(contexto.mMap == null) {
+
+            FragmentManager fragmentManager = contexto.getFragmentManager();
+            try {
+                contexto.mMap = ((MapFragment) fragmentManager.findFragmentById(R.id.mapa_eventos)).getMap();
+                contexto.mMap.addMarker(new MarkerOptions().position(new LatLng(-34.619950, -58.420246)).title("Evento").snippet("Shabbaton con los pibes"));
+                contexto.mMap.addMarker(new MarkerOptions().position(new LatLng(-34.594137, -58.421856)).title("Evento2").snippet("Shabbaton con los pibes2"));
+                contexto.mMap.addMarker(new MarkerOptions().position(new LatLng(-34.566272, -58.444209)).title("Evento3").snippet("Shabbaton con los pibes3"));
+            }catch (Exception e){
+
+            }
+        }
+
+    }
+
 
 }
