@@ -1,4 +1,4 @@
-package com.bigbambu.jewmmunity;
+package com.bigbambu.jewmmunity.Layout;
 
 import android.app.FragmentManager;
 import android.content.Intent;
@@ -13,6 +13,11 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bigbambu.jewmmunity.Clases.CPublicacion;
+import com.bigbambu.jewmmunity.Clases.CUsuario;
+import com.bigbambu.jewmmunity.R;
+import com.bigbambu.jewmmunity.Utiles.Constants;
+import com.bigbambu.jewmmunity.Utiles.MyAdapter;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -27,13 +32,14 @@ public class Main extends AppCompatActivity {
     TextView lbl_user;
     TextView lbl_puntaje;
     ImageButton btn_home;
-    ImageButton btn_fotos;
     ImageButton btn_buscar_eventos;
     ImageButton fijar_punto;
     Button btn_settings;
     FragmentManager fragmentManager;
     private static GoogleMap mMap;
-    View f_mapa;
+
+    View view_publicaciones;
+    View view_buscar_evento;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +54,6 @@ public class Main extends AppCompatActivity {
         lbl_user = (TextView) findViewById(R.id.lbl_user);
         lbl_puntaje = (TextView) findViewById(R.id.lbl_score);
         btn_home = (ImageButton) findViewById(R.id.btn_home);
-        btn_fotos = (ImageButton) findViewById(R.id.btn_fotos);
         btn_buscar_eventos = (ImageButton) findViewById(R.id.btn_buscar_eventos);
         btn_settings = (Button) findViewById(R.id.btn_settings);
         fijar_punto = (ImageButton) findViewById(R.id.btn_buscar_comunidades);
@@ -67,39 +72,19 @@ public class Main extends AppCompatActivity {
         btn_home.setBackgroundResource(R.drawable.icon_home_selected);
         vista_inferior.removeAllViews();
         vista_inferior.addView(View.inflate(contexto, R.layout.view_publicaciones, null));
-        this.cargarViewPublicaciones(contexto);
 
-        try {
-            fragmentManager = contexto.getFragmentManager();
-            f_mapa = View.inflate(contexto, R.layout.view_buscar_evento, null);
-            mMap = ((MapFragment) fragmentManager.findFragmentById(R.id.map)).getMap();
-        }catch (Exception e){}
+        cargarViewPublicaciones(contexto);
+        cargarViewBuscarEventos(contexto);
 
         // Listeners
         btn_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 btn_home.setBackgroundResource(R.drawable.icon_home_selected);
-                btn_fotos.setBackgroundResource(R.drawable.icon_photos);
                 btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event);
-                btn_buscar_eventos.setEnabled(true);
-                vista_inferior.removeAllViews();
-                vista_inferior.addView(View.inflate(contexto, R.layout.view_publicaciones, null));
-                Main.cargarViewPublicaciones(contexto);
-            }
-        });
-
-        btn_fotos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                btn_home.setBackgroundResource(R.drawable.icon_home);
-                btn_fotos.setBackgroundResource(R.drawable.icon_photos_selected);
-                btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event);
-                btn_buscar_eventos.setEnabled(true);
 
                 vista_inferior.removeAllViews();
-                vista_inferior.addView(View.inflate(contexto, R.layout.view_fotos, null));
-                Main.cargarViewFotos(contexto);
+                vista_inferior.addView(view_publicaciones);
             }
         });
 
@@ -108,13 +93,10 @@ public class Main extends AppCompatActivity {
             public void onClick(View view) {
                 try {
                     btn_home.setBackgroundResource(R.drawable.icon_home);
-                    btn_fotos.setBackgroundResource(R.drawable.icon_photos);
                     btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event_selected);
-                    btn_buscar_eventos.setEnabled(false);
-
 
                     vista_inferior.removeAllViews();
-                    vista_inferior.addView(f_mapa);
+                    vista_inferior.addView(view_buscar_evento);
                 }
                 catch (Exception e){}
             }
@@ -183,51 +165,14 @@ public class Main extends AppCompatActivity {
         lista_publicaciones.setAdapter(new MyAdapter(contexto, publicaciones));
     }
 
-    public static void cargarViewFotos(Main contexto)
-    {
-        //Agregar imagenes dinamicamente al tablelayout
-        /*TableLayout matriz_fotos = (TableLayout)contexto.findViewById(R.id.layout_fotos);
-
-        ImageView una_imagen = new ImageView(contexto);
-        una_imagen.setImageDrawable(contexto.getResources().getDrawable(R.drawable.default_photo));
-
-        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(100, 100);
-        lp.setMargins(5, 5, 5, 5);
-        una_imagen.setLayoutParams(lp);
-
-        Boolean fue_agregada = false;
-        for(int i = 0, j = matriz_fotos.getChildCount(); i < j; i++) {
-            View view = matriz_fotos.getChildAt(i);
-            if (view instanceof TableRow) {
-                TableRow fila = (TableRow) view;
-                if( fila.getChildCount() < 3 ) {
-                    fila.addView(una_imagen);
-                    fue_agregada = true;
-                }
-            }
-        }
-        if(!fue_agregada){
-            TableRow nueva_fila = new TableRow(contexto);
-            matriz_fotos.addView(nueva_fila);
-            nueva_fila.addView(una_imagen);
-        }*/
-
-    }
-
 
     public static void cargarViewBuscarEventos(Main contexto) {
-        if(contexto.mMap == null) {
+        try {
+            contexto.fragmentManager = contexto.getFragmentManager();
+            contexto.view_buscar_evento = View.inflate(contexto, R.layout.view_buscar_evento, null);
+            mMap = ((MapFragment) contexto.fragmentManager.findFragmentById(R.id.map)).getMap();
+        }catch (Exception e){}
 
-
-            try {
-                contexto.mMap = ((MapFragment) contexto.fragmentManager.findFragmentById(R.id.map)).getMap();
-                //contexto.mMap.addMarker(new MarkerOptions().position(new LatLng(-34.619950, -58.420246)).title("Evento").snippet("Shabbaton con los pibes"));
-                //contexto.mMap.addMarker(new MarkerOptions().position(new LatLng(-34.594137, -58.421856)).title("Evento2").snippet("Shabbaton con los pibes2"));
-                //contexto.mMap.addMarker(new MarkerOptions().position(new LatLng(-34.566272, -58.444209)).title("Evento3").snippet("Shabbaton con los pibes3"));
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-        }
 
     }
 

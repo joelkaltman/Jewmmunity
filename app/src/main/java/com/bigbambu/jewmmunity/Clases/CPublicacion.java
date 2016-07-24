@@ -1,6 +1,8 @@
-package com.bigbambu.jewmmunity;
+package com.bigbambu.jewmmunity.Clases;
 
 import android.graphics.drawable.Drawable;
+
+import com.bigbambu.jewmmunity.Utiles.Constants;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -14,6 +16,17 @@ public class CPublicacion {
     String descripcion;
     Drawable imagen;
     Date fecha;
+    private Constants.TipoPublicacion tipo;
+    private CEvento evento;
+
+    public static CPublicacion generarPublicacion(CUsuario publicador){
+        CPublicacion retornar = new CPublicacion();
+        retornar.setTitulo("Titulo1");
+        retornar.setDescripcion("Descripcion1");
+        retornar.setUsuario(publicador);
+        retornar.setFecha(Calendar.getInstance().getTime());
+        return retornar;
+    }
 
     public String getTitulo() {
         return titulo;
@@ -54,14 +67,19 @@ public class CPublicacion {
     public void setFecha(Date imagen) {
         this.fecha = imagen;
     }
-
-    public static CPublicacion generarPublicacion(CUsuario publicador){
-        CPublicacion retornar = new CPublicacion();
-        retornar.setTitulo("Titulo1");
-        retornar.setDescripcion("Descripcion1");
-        retornar.setUsuario(publicador);
-        retornar.setFecha(Calendar.getInstance().getTime());
-        return retornar;
+    public Constants.TipoPublicacion getTipo() {
+        return tipo;
     }
 
+    public void setTipo(Constants.TipoPublicacion tipo) {
+        this.tipo = tipo;
+    }
+
+    public CEvento getEvento() {
+        return evento;
+    }
+
+    public void setEvento(CEvento evento) {
+        this.evento = evento;
+    }
 }

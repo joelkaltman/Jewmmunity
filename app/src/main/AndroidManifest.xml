@@ -23,7 +23,7 @@
             android:value="AIzaSyBhc0ocslgY7crNr8EngGJszYmMFveRC-o" />
 
         <activity
-            android:name=".Login"
+            android:name=".Layout.Login"
             android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat.NoActionBar" >
             <intent-filter>
@@ -32,9 +32,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:label="@string/app_name" android:name=".Main" android:theme="@style/Theme.AppCompat.NoActionBar"/>
-        <activity android:label="@string/app_name" android:name=".Settings" android:theme="@style/Theme.AppCompat.NoActionBar"/>
-        <activity android:label="@string/app_name" android:name=".Register" android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:label="@string/app_name" android:name=".Layout.Main" android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:label="@string/app_name" android:name=".Layout.Settings" android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:label="@string/app_name" android:name=".Layout.Register" android:theme="@style/Theme.AppCompat.NoActionBar"/>
     </application>
 
 </manifest>

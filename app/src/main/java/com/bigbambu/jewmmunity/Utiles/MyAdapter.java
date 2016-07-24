@@ -1,4 +1,4 @@
-package com.bigbambu.jewmmunity;
+package com.bigbambu.jewmmunity.Utiles;
 
 import android.content.Context;
 import android.text.format.DateFormat;
@@ -9,6 +9,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
+
+import com.bigbambu.jewmmunity.Clases.CPublicacion;
+import com.bigbambu.jewmmunity.R;
 
 import java.util.ArrayList;
 
