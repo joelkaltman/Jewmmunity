@@ -16,13 +16,9 @@ import android.widget.TextView;
 import com.bigbambu.jewmmunity.Clases.CPublicacion;
 import com.bigbambu.jewmmunity.Clases.CUsuario;
 import com.bigbambu.jewmmunity.R;
-import com.bigbambu.jewmmunity.Utiles.Constants;
 import com.bigbambu.jewmmunity.Utiles.MyAdapter;
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
 
@@ -32,14 +28,17 @@ public class Main extends AppCompatActivity {
     TextView lbl_user;
     TextView lbl_puntaje;
     ImageButton btn_home;
+    ImageButton btn_perfil;
     ImageButton btn_buscar_eventos;
-    ImageButton fijar_punto;
     Button btn_settings;
     FragmentManager fragmentManager;
     private static GoogleMap mMap;
 
     View view_publicaciones;
+    View view_perfil;
     View view_buscar_evento;
+
+    CUsuario usuario_actual;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +55,7 @@ public class Main extends AppCompatActivity {
         btn_home = (ImageButton) findViewById(R.id.btn_home);
         btn_buscar_eventos = (ImageButton) findViewById(R.id.btn_buscar_eventos);
         btn_settings = (Button) findViewById(R.id.btn_settings);
-        fijar_punto = (ImageButton) findViewById(R.id.btn_buscar_comunidades);
+        btn_perfil = (ImageButton) findViewById(R.id.btn_perfil);
 
 
         // Usuario Actual
@@ -64,23 +63,25 @@ public class Main extends AppCompatActivity {
         if(usuario_ingresado.isEmpty()){
             usuario_ingresado = "miUsuario";
         }
-        CUsuario usuario_actual = CUsuario.generarUsuario(usuario_ingresado);
+        usuario_actual = CUsuario.generarUsuario(usuario_ingresado);
         lbl_user.setText(usuario_actual.getUsuario());
         lbl_puntaje.setText(String.valueOf(usuario_actual.getPuntaje()));
 
         // Contenido de vista inferior (default: home)
-        btn_home.setBackgroundResource(R.drawable.icon_home_selected);
+        btn_home.setBackgroundResource(R.drawable.icon_publications_selected);
         vista_inferior.removeAllViews();
         vista_inferior.addView(View.inflate(contexto, R.layout.view_publicaciones, null));
 
         cargarViewPublicaciones(contexto);
+        cargarViewPerfil(contexto);
         cargarViewBuscarEventos(contexto);
 
         // Listeners
         btn_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btn_home.setBackgroundResource(R.drawable.icon_home_selected);
+                btn_home.setBackgroundResource(R.drawable.icon_publications_selected);
+                btn_perfil.setBackgroundResource(R.drawable.icon_profile);
                 btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event);
 
                 vista_inferior.removeAllViews();
@@ -92,7 +93,8 @@ public class Main extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    btn_home.setBackgroundResource(R.drawable.icon_home);
+                    btn_home.setBackgroundResource(R.drawable.icon_publications);
+                    btn_perfil.setBackgroundResource(R.drawable.icon_profile);
                     btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event_selected);
 
                     vista_inferior.removeAllViews();
@@ -102,14 +104,20 @@ public class Main extends AppCompatActivity {
             }
         });
 
-        fijar_punto.setOnClickListener(new View.OnClickListener() {
+        btn_perfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                try {
+                /*try {
                     mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Constants.BSAS, 11f));
                     mMap.addMarker(new MarkerOptions().position(new LatLng(-34.619950, -58.420246)).title("Evento").snippet("Shabbaton con los pibes"));
                 } catch (Exception e) {
-                }
+                }*/
+                btn_home.setBackgroundResource(R.drawable.icon_publications);
+                btn_perfil.setBackgroundResource(R.drawable.icon_profile_selected);
+                btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event);
+
+                vista_inferior.removeAllViews();
+                vista_inferior.addView(view_perfil);
             }
         });
 
@@ -165,6 +173,10 @@ public class Main extends AppCompatActivity {
         lista_publicaciones.setAdapter(new MyAdapter(contexto, publicaciones));
     }
 
+    public static void cargarViewPerfil(Main contexto)
+    {
+        contexto.view_perfil = View.inflate(contexto, R.layout.perfil, null);
+    }
 
     public static void cargarViewBuscarEventos(Main contexto) {
         try {

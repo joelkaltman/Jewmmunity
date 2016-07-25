@@ -120,10 +120,10 @@
                 android:background="#054781">
 
                 <ImageButton
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:id="@+id/btn_home"
-                    android:background="@drawable/icon_home"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/btn_perfil"
+                    android:background="@drawable/icon_profile"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"
@@ -131,7 +131,17 @@
 
                 <ImageButton
                     android:layout_width="30dp"
-                    android:layout_height="27dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/btn_home"
+                    android:background="@drawable/icon_publications"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp" />
+
+                <ImageButton
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:id="@+id/btn_miscomunidad"
                     android:background="@drawable/icon_community"
                     android:layout_marginRight="20dp"
@@ -140,8 +150,8 @@
                     android:layout_marginTop="10dp" />
 
                 <ImageButton
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:id="@+id/btn_miseventos"
                     android:background="@drawable/icon_event"
                     android:layout_marginRight="20dp"
@@ -150,18 +160,8 @@
                     android:layout_marginBottom="10dp" />
 
                 <ImageButton
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:id="@+id/btn_buscar_gente"
-                    android:background="@drawable/icon_tinder"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp" />
-
-                <ImageButton
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:id="@+id/btn_buscar_comunidades"
                     android:background="@drawable/icon_search_community"
                     android:layout_marginRight="20dp"
@@ -170,8 +170,8 @@
                     android:layout_marginBottom="10dp" />
 
                 <ImageButton
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:id="@+id/btn_buscar_eventos"
                     android:background="@drawable/icon_search_event"
                     android:layout_marginRight="20dp"
@@ -180,14 +180,55 @@
                     android:layout_marginBottom="10dp" />
 
                 <ImageButton
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/btn_viaje"
+                    android:background="@drawable/icon_travel"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp" />
+
+                <ImageButton
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/btn_foro"
+                    android:background="@drawable/icon_forum"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp" />
+
+                <ImageButton
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/btn_trabajo"
+                    android:background="@drawable/icon_work"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp" />
+
+                <ImageButton
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/btn_servicio"
+                    android:background="@drawable/icon_service"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp" />
+
+                <ImageButton
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:id="@+id/btn_puntaje"
                     android:background="@drawable/icon_score"
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp" />
+
             </LinearLayout>
         </HorizontalScrollView>
 

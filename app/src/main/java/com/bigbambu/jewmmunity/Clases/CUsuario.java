@@ -12,6 +12,7 @@ public class CUsuario {
     private String nombre;
     private String apellido;
     private String apellido_madre;
+    private int telefono;
     private List<CComunidad> comunidades;
     private List<CEvento> eventos;
     private List<CUsuario> amigos;
@@ -22,6 +23,10 @@ public class CUsuario {
         retornar.setContrasenia("1234");
         retornar.setNombre(usuario);
         retornar.setPuntaje(0);
+        retornar.setNombre("Juan");
+        retornar.setApellido("Perenovich");
+        retornar.setApellido_madre("Lubtzcgigjhgvgajhgavich");
+        retornar.setTelefono(44444444);
         return retornar;
     }
 
@@ -55,6 +60,14 @@ public class CUsuario {
 
     public void setPuntaje(int puntaje) {
         this.puntaje = puntaje;
+    }
+
+    public int getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
     }
 
     public String getApellido() {
