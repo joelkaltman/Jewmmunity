@@ -11,7 +11,8 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="#005fb2">
 
             <TextView
                 android:layout_width="match_parent"
@@ -22,7 +23,8 @@
                 android:textStyle="bold"
                 android:layout_column="1"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp" />
+                android:layout_marginLeft="10dp"
+                android:textColor="#ffffff" />
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -40,7 +42,8 @@
                         android:id="@+id/textView24"
                         android:textSize="20dp"
                         android:layout_column="1"
-                        android:textStyle="italic" />
+                        android:textStyle="italic"
+                        android:textColor="#ffffff" />
                 </TableRow>
 
                 <View
@@ -59,7 +62,8 @@
                         android:text="First name"
                         android:id="@+id/textView2"
                         android:textSize="18dp"
-                        android:layout_column="1" />
+                        android:layout_column="1"
+                        android:textColor="#ffffff" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -67,7 +71,8 @@
                         android:text="-"
                         android:id="@+id/lbl_perfil_nombre"
                         android:textSize="18dp"
-                        android:layout_column="3" />
+                        android:layout_column="3"
+                        android:textColor="#ffffff" />
 
                 </TableRow>
 
@@ -83,7 +88,8 @@
                         android:id="@+id/textView12"
                         android:layout_marginRight="5dp"
                         android:textSize="18dp"
-                        android:layout_column="1" />
+                        android:layout_column="1"
+                        android:textColor="#ffffff" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -91,7 +97,8 @@
                         android:text="-"
                         android:id="@+id/lbl_perfil_apellido"
                         android:textSize="18dp"
-                        android:layout_column="3" />
+                        android:layout_column="3"
+                        android:textColor="#ffffff" />
 
                 </TableRow>
 
@@ -107,7 +114,8 @@
                         android:id="@+id/textView22"
                         android:layout_marginRight="5dp"
                         android:textSize="18dp"
-                        android:layout_column="1" />
+                        android:layout_column="1"
+                        android:textColor="#ffffff" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -115,7 +123,8 @@
                         android:text="-"
                         android:id="@+id/lbl_perfil_apellido_madre"
                         android:textSize="18dp"
-                        android:layout_column="3" />
+                        android:layout_column="3"
+                        android:textColor="#ffffff" />
                 </TableRow>
 
                 <TableRow
@@ -129,14 +138,18 @@
                         android:text="e-mail"
                         android:id="@+id/textView13"
                         android:textSize="18dp"
-                        android:layout_column="1" />
+                        android:layout_column="1"
+                        android:textColor="#ffffff" />
 
-                    <EditText
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/txt_perfil_email"
-                        android:layout_weight="1"
-                        android:layout_column="3" />
+                        android:text="-"
+                        android:id="@+id/lbl_perfil_email"
+                        android:textSize="18dp"
+                        android:layout_column="3"
+                        android:textColor="#ffffff" />
+
                 </TableRow>
 
                 <TableRow
@@ -151,7 +164,8 @@
                         android:id="@+id/textView15"
                         android:layout_marginRight="5dp"
                         android:textSize="18dp"
-                        android:layout_column="1" />
+                        android:layout_column="1"
+                        android:textColor="#ffffff" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -159,7 +173,8 @@
                         android:text="-"
                         android:id="@+id/lbl_perfil_sexo"
                         android:textSize="18dp"
-                        android:layout_column="3" />
+                        android:layout_column="3"
+                        android:textColor="#ffffff" />
                 </TableRow>
 
                 <TableRow
@@ -173,7 +188,8 @@
                         android:text="Telephone"
                         android:id="@+id/textView20"
                         android:textSize="18dp"
-                        android:layout_column="1" />
+                        android:layout_column="1"
+                        android:textColor="#ffffff" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -181,7 +197,8 @@
                         android:text="-"
                         android:id="@+id/lbl_perfil_telefono"
                         android:textSize="18dp"
-                        android:layout_column="3" />
+                        android:layout_column="3"
+                        android:textColor="#ffffff" />
                 </TableRow>
 
                 <TableRow
@@ -195,7 +212,8 @@
                         android:text="Communities"
                         android:id="@+id/textView17"
                         android:textSize="18dp"
-                        android:layout_column="1" />
+                        android:layout_column="1"
+                        android:textColor="#ffffff" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -203,7 +221,8 @@
                         android:text="-"
                         android:id="@+id/lbl_perfil_comunidades"
                         android:textSize="18dp"
-                        android:layout_column="3" />
+                        android:layout_column="3"
+                        android:textColor="#ffffff" />
 
                 </TableRow>
 
@@ -222,7 +241,8 @@
                     android:id="@+id/textView14"
                     android:textSize="20dp"
                     android:layout_column="1"
-                    android:textStyle="italic" />
+                    android:textStyle="italic"
+                    android:textColor="#ffffff" />
 
                 <View
                     android:layout_width="match_parent"
@@ -358,7 +378,8 @@
                     android:id="@+id/textView14a"
                     android:textSize="20dp"
                     android:layout_column="1"
-                    android:textStyle="italic" />
+                    android:textStyle="italic"
+                    android:textColor="#ffffff" />
 
                 <View
                     android:layout_width="match_parent"

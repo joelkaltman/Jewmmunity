@@ -69,8 +69,9 @@ public class Main extends AppCompatActivity {
 
         // Contenido de vista inferior (default: home)
         btn_home.setBackgroundResource(R.drawable.icon_publications_selected);
+        view_publicaciones = View.inflate(contexto, R.layout.view_publicaciones, null);
         vista_inferior.removeAllViews();
-        vista_inferior.addView(View.inflate(contexto, R.layout.view_publicaciones, null));
+        vista_inferior.addView(view_publicaciones);
 
         cargarViewPublicaciones(contexto);
         cargarViewPerfil(contexto);
