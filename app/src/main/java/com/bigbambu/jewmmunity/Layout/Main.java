@@ -14,10 +14,12 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bigbambu.jewmmunity.Clases.CComunidad;
+import com.bigbambu.jewmmunity.Clases.CEvento;
 import com.bigbambu.jewmmunity.Clases.CPublicacion;
 import com.bigbambu.jewmmunity.Clases.CUsuario;
 import com.bigbambu.jewmmunity.R;
 import com.bigbambu.jewmmunity.Utiles.AdapterViewMisComunidades;
+import com.bigbambu.jewmmunity.Utiles.AdapterViewMisEventos;
 import com.bigbambu.jewmmunity.Utiles.AdapterViewPublicaciones;
 import com.bigbambu.jewmmunity.Utiles.Constants;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -37,6 +39,7 @@ public class Main extends AppCompatActivity {
     ImageButton btn_home;
     ImageButton btn_perfil;
     ImageButton btn_mis_comunidades;
+    ImageButton btn_mis_eventos;
     ImageButton btn_buscar_eventos;
     ImageButton btn_buscar_comunidades;
     Button btn_settings;
@@ -47,6 +50,7 @@ public class Main extends AppCompatActivity {
     View view_perfil;
     View view_publicaciones;
     View view_mis_comunidades;
+    View view_mis_eventos;
     View view_buscar_evento;
     View view_buscar_comunidad;
 
@@ -67,6 +71,7 @@ public class Main extends AppCompatActivity {
         btn_home = (ImageButton) findViewById(R.id.btn_home);
         btn_perfil = (ImageButton) findViewById(R.id.btn_perfil);
         btn_mis_comunidades = (ImageButton) findViewById(R.id.btn_mis_comunidades);
+        btn_mis_eventos = (ImageButton) findViewById(R.id.btn_mis_eventos);
         btn_buscar_eventos = (ImageButton) findViewById(R.id.btn_buscar_eventos);
         btn_buscar_comunidades = (ImageButton) findViewById(R.id.btn_buscar_comunidades);
         btn_settings = (Button) findViewById(R.id.btn_settings);
@@ -85,18 +90,21 @@ public class Main extends AppCompatActivity {
         btn_home.setBackgroundResource(R.drawable.icon_publications_selected);
         view_publicaciones = View.inflate(contexto, R.layout.view_publicaciones, null);
         view_mis_comunidades = View.inflate(contexto, R.layout.view_mis_comunidades, null);
+        view_mis_eventos = View.inflate(contexto, R.layout.view_mis_eventos, null);
         view_perfil = View.inflate(contexto, R.layout.view_perfil, null);
         view_buscar_evento = View.inflate(contexto, R.layout.view_buscar_evento, null);
         view_buscar_comunidad = View.inflate(contexto, R.layout.view_buscar_comunidad, null);
 
         vista_inferior.removeAllViews();
         vista_inferior.addView(view_mis_comunidades);
+        vista_inferior.addView(view_mis_eventos);
         vista_inferior.addView(view_perfil);
         vista_inferior.addView(view_publicaciones);
 
         cargarViewPerfil(contexto);
         cargarViewPublicaciones(contexto);
         cargarViewMisComunidades(contexto);
+        cargarViewMisEventos(contexto);
         cargarViewBuscarEventos(contexto);
         cargarViewBuscarComunidades(contexto);
 
@@ -108,6 +116,7 @@ public class Main extends AppCompatActivity {
                 btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event);
                 btn_buscar_comunidades.setBackgroundResource(R.drawable.icon_search_community);
                 btn_mis_comunidades.setBackgroundResource(R.drawable.icon_community);
+                btn_mis_eventos.setBackgroundResource(R.drawable.icon_event);
 
                 vista_inferior.removeAllViews();
                 vista_inferior.addView(view_perfil);
@@ -123,6 +132,7 @@ public class Main extends AppCompatActivity {
                 btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event);
                 btn_buscar_comunidades.setBackgroundResource(R.drawable.icon_search_community);
                 btn_mis_comunidades.setBackgroundResource(R.drawable.icon_community);
+                btn_mis_eventos.setBackgroundResource(R.drawable.icon_event);
 
                 vista_inferior.removeAllViews();
                 vista_inferior.addView(view_publicaciones);
@@ -137,9 +147,25 @@ public class Main extends AppCompatActivity {
                 btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event);
                 btn_buscar_comunidades.setBackgroundResource(R.drawable.icon_search_community);
                 btn_mis_comunidades.setBackgroundResource(R.drawable.icon_community_selected);
+                btn_mis_eventos.setBackgroundResource(R.drawable.icon_event);
 
                 vista_inferior.removeAllViews();
                 vista_inferior.addView(view_mis_comunidades);
+            }
+        });
+
+        btn_mis_eventos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btn_home.setBackgroundResource(R.drawable.icon_publications);
+                btn_perfil.setBackgroundResource(R.drawable.icon_profile);
+                btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event);
+                btn_buscar_comunidades.setBackgroundResource(R.drawable.icon_search_community);
+                btn_mis_comunidades.setBackgroundResource(R.drawable.icon_community);
+                btn_mis_eventos.setBackgroundResource(R.drawable.icon_event_selected);
+
+                vista_inferior.removeAllViews();
+                vista_inferior.addView(view_mis_eventos);
             }
         });
 
@@ -152,6 +178,7 @@ public class Main extends AppCompatActivity {
                     btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event_selected);
                     btn_buscar_comunidades.setBackgroundResource(R.drawable.icon_search_community);
                     btn_mis_comunidades.setBackgroundResource(R.drawable.icon_community);
+                    btn_mis_eventos.setBackgroundResource(R.drawable.icon_event);
 
                     vista_inferior.removeAllViews();
                     vista_inferior.addView(view_buscar_evento);
@@ -169,6 +196,7 @@ public class Main extends AppCompatActivity {
                     btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event);
                     btn_buscar_comunidades.setBackgroundResource(R.drawable.icon_search_community_selected);
                     btn_mis_comunidades.setBackgroundResource(R.drawable.icon_community);
+                    btn_mis_eventos.setBackgroundResource(R.drawable.icon_event);
 
                     vista_inferior.removeAllViews();
                     vista_inferior.addView(view_buscar_comunidad);
@@ -280,6 +308,20 @@ public class Main extends AppCompatActivity {
         // Cargo view_publicaciones
         ListView lista_publicaciones = (ListView)findViewById(R.id.lst_mis_comunidades);
         lista_publicaciones.setAdapter(new AdapterViewMisComunidades(this, comunidades));
+    }
+
+    public void cargarViewMisEventos(Main contexto)
+    {
+        // Publicaciones
+        ArrayList<CEvento> eventos =  new ArrayList<CEvento>();
+
+        for(int i = 0; i < 5; i++) {
+            eventos.add(new CEvento());
+        }
+
+        // Cargo view_publicaciones
+        ListView lista_eventos = (ListView)findViewById(R.id.view_mis_eventos_lst_eventos);
+        lista_eventos.setAdapter(new AdapterViewMisEventos(this, eventos));
     }
 
     public static void cargarViewBuscarEventos(Main contexto) {
