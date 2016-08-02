@@ -18,12 +18,12 @@ import java.util.ArrayList;
 /**
  * Created by Joel on 17-Jul-16.
  */
-public class MyAdapter extends BaseAdapter implements ListAdapter {
+public class AdapterViewPublicaciones extends BaseAdapter implements ListAdapter {
 
     private Context context;
     private ArrayList<CPublicacion> publications;
 
-    public MyAdapter(Context context, ArrayList<CPublicacion> mobiles) {
+    public AdapterViewPublicaciones(Context context, ArrayList<CPublicacion> mobiles) {
         this.context = context;
         this.publications = mobiles;
     }
@@ -48,7 +48,7 @@ public class MyAdapter extends BaseAdapter implements ListAdapter {
 
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = (View) inflater.inflate(R.layout.list_entry_layout, null);
+            convertView = (View) inflater.inflate(R.layout.view_publicaciones_entry, null);
         }
 
         TextView name = (TextView)convertView.findViewById(R.id.list_entry_title);
@@ -56,6 +56,7 @@ public class MyAdapter extends BaseAdapter implements ListAdapter {
         TextView user=(TextView)convertView.findViewById(R.id.list_entry_user);
         ImageView imagen = (ImageView)convertView.findViewById(R.id.list_entry_image);
         TextView date = (TextView)convertView.findViewById(R.id.list_entry_date);
+
 
 
         name.setText(publications.get(position).getTitulo());

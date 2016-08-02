@@ -29,4 +29,7 @@ public class Constants {
         INFORMATICA, LIDER, ADMINISTRACION,
     }
 
+    public enum SexoUsuario{
+        HOMBRE, MUJER
+    }
 }

@@ -7,6 +7,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#0260b2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
         android:gravity="bottom">
 
         <FrameLayout
@@ -15,8 +17,8 @@
 
             <ListView
                 android:layout_width="match_parent"
-                android:layout_height="fill_parent"
-                android:id="@+id/lst_publicaciones"
+                android:layout_height="match_parent"
+                android:id="@+id/lst_mis_comunidades"
                 android:layout_weight="1"
                 android:background="#0260b2"
                 android:layout_alignParentLeft="true"
@@ -28,8 +30,8 @@
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="119dp"
             android:layout_height="37dp"
-            android:text="Publish"
-            android:id="@+id/view_publicaciones_btn_publicar"
+            android:text="Create"
+            android:id="@+id/view_mis_comunidades_btn_create"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/login_button"
             android:textColor="#086ab2"

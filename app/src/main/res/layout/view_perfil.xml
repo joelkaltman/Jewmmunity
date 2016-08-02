@@ -14,18 +14,6 @@
             android:layout_height="wrap_content"
             android:background="#005fb2">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Profile"
-                android:id="@+id/textView"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:layout_column="1"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:textColor="#ffffff" />
-
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -69,10 +57,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="-"
-                        android:id="@+id/lbl_perfil_nombre"
+                        android:id="@+id/view_perfil_lbl_nombre"
                         android:textSize="18dp"
                         android:layout_column="3"
-                        android:textColor="#ffffff" />
+                        android:textColor="#ffffff"
+                        android:layout_marginLeft="10dp" />
 
                 </TableRow>
 
@@ -95,10 +84,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="-"
-                        android:id="@+id/lbl_perfil_apellido"
+                        android:id="@+id/view_perfil_lbl_apellido"
                         android:textSize="18dp"
                         android:layout_column="3"
-                        android:textColor="#ffffff" />
+                        android:textColor="#ffffff"
+                        android:layout_marginLeft="10dp" />
 
                 </TableRow>
 
@@ -121,10 +111,37 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="-"
-                        android:id="@+id/lbl_perfil_apellido_madre"
+                        android:id="@+id/view_perfil_lbl_apellido_madre"
                         android:textSize="18dp"
                         android:layout_column="3"
+                        android:textColor="#ffffff"
+                        android:layout_marginLeft="10dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Birth"
+                        android:id="@+id/textView21"
+                        android:layout_marginRight="5dp"
+                        android:textSize="18dp"
+                        android:layout_column="1"
                         android:textColor="#ffffff" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-"
+                        android:id="@+id/view_perfil_lbl_nacimiento"
+                        android:textSize="18dp"
+                        android:layout_column="3"
+                        android:textColor="#ffffff"
+                        android:layout_marginLeft="10dp" />
                 </TableRow>
 
                 <TableRow
@@ -145,10 +162,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="-"
-                        android:id="@+id/lbl_perfil_email"
+                        android:id="@+id/view_perfil_lbl_email"
                         android:textSize="18dp"
                         android:layout_column="3"
-                        android:textColor="#ffffff" />
+                        android:textColor="#ffffff"
+                        android:layout_marginLeft="10dp" />
 
                 </TableRow>
 
@@ -171,10 +189,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="-"
-                        android:id="@+id/lbl_perfil_sexo"
+                        android:id="@+id/view_perfil_lbl_sexo"
                         android:textSize="18dp"
                         android:layout_column="3"
-                        android:textColor="#ffffff" />
+                        android:textColor="#ffffff"
+                        android:layout_marginLeft="10dp" />
                 </TableRow>
 
                 <TableRow
@@ -195,10 +214,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="-"
-                        android:id="@+id/lbl_perfil_telefono"
+                        android:id="@+id/view_perfil_lbl_telefono"
                         android:textSize="18dp"
                         android:layout_column="3"
-                        android:textColor="#ffffff" />
+                        android:textColor="#ffffff"
+                        android:layout_marginLeft="10dp" />
                 </TableRow>
 
                 <TableRow
@@ -219,10 +239,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="-"
-                        android:id="@+id/lbl_perfil_comunidades"
+                        android:id="@+id/view_perfil_lbl_comunidades"
                         android:textSize="18dp"
                         android:layout_column="3"
-                        android:textColor="#ffffff" />
+                        android:textColor="#ffffff"
+                        android:layout_marginLeft="10dp" />
 
                 </TableRow>
 

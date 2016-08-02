@@ -13,12 +13,19 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bigbambu.jewmmunity.Clases.CComunidad;
 import com.bigbambu.jewmmunity.Clases.CPublicacion;
 import com.bigbambu.jewmmunity.Clases.CUsuario;
 import com.bigbambu.jewmmunity.R;
-import com.bigbambu.jewmmunity.Utiles.MyAdapter;
+import com.bigbambu.jewmmunity.Utiles.AdapterViewMisComunidades;
+import com.bigbambu.jewmmunity.Utiles.AdapterViewPublicaciones;
+import com.bigbambu.jewmmunity.Utiles.Constants;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
 
@@ -29,14 +36,19 @@ public class Main extends AppCompatActivity {
     TextView lbl_puntaje;
     ImageButton btn_home;
     ImageButton btn_perfil;
+    ImageButton btn_mis_comunidades;
     ImageButton btn_buscar_eventos;
+    ImageButton btn_buscar_comunidades;
     Button btn_settings;
     FragmentManager fragmentManager;
-    private static GoogleMap mMap;
+    private static GoogleMap mapa_eventos;
+    private static GoogleMap mapa_comunidades;
 
-    View view_publicaciones;
     View view_perfil;
+    View view_publicaciones;
+    View view_mis_comunidades;
     View view_buscar_evento;
+    View view_buscar_comunidad;
 
     CUsuario usuario_actual;
 
@@ -53,9 +65,11 @@ public class Main extends AppCompatActivity {
         lbl_user = (TextView) findViewById(R.id.lbl_user);
         lbl_puntaje = (TextView) findViewById(R.id.lbl_score);
         btn_home = (ImageButton) findViewById(R.id.btn_home);
-        btn_buscar_eventos = (ImageButton) findViewById(R.id.btn_buscar_eventos);
-        btn_settings = (Button) findViewById(R.id.btn_settings);
         btn_perfil = (ImageButton) findViewById(R.id.btn_perfil);
+        btn_mis_comunidades = (ImageButton) findViewById(R.id.btn_mis_comunidades);
+        btn_buscar_eventos = (ImageButton) findViewById(R.id.btn_buscar_eventos);
+        btn_buscar_comunidades = (ImageButton) findViewById(R.id.btn_buscar_comunidades);
+        btn_settings = (Button) findViewById(R.id.btn_settings);
 
 
         // Usuario Actual
@@ -70,12 +84,35 @@ public class Main extends AppCompatActivity {
         // Contenido de vista inferior (default: home)
         btn_home.setBackgroundResource(R.drawable.icon_publications_selected);
         view_publicaciones = View.inflate(contexto, R.layout.view_publicaciones, null);
+        view_mis_comunidades = View.inflate(contexto, R.layout.view_mis_comunidades, null);
+        view_perfil = View.inflate(contexto, R.layout.view_perfil, null);
+        view_buscar_evento = View.inflate(contexto, R.layout.view_buscar_evento, null);
+        view_buscar_comunidad = View.inflate(contexto, R.layout.view_buscar_comunidad, null);
+
         vista_inferior.removeAllViews();
+        vista_inferior.addView(view_mis_comunidades);
+        vista_inferior.addView(view_perfil);
         vista_inferior.addView(view_publicaciones);
 
-        cargarViewPublicaciones(contexto);
         cargarViewPerfil(contexto);
+        cargarViewPublicaciones(contexto);
+        cargarViewMisComunidades(contexto);
         cargarViewBuscarEventos(contexto);
+        cargarViewBuscarComunidades(contexto);
+
+        btn_perfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btn_home.setBackgroundResource(R.drawable.icon_publications);
+                btn_perfil.setBackgroundResource(R.drawable.icon_profile_selected);
+                btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event);
+                btn_buscar_comunidades.setBackgroundResource(R.drawable.icon_search_community);
+                btn_mis_comunidades.setBackgroundResource(R.drawable.icon_community);
+
+                vista_inferior.removeAllViews();
+                vista_inferior.addView(view_perfil);
+            }
+        });
 
         // Listeners
         btn_home.setOnClickListener(new View.OnClickListener() {
@@ -84,9 +121,25 @@ public class Main extends AppCompatActivity {
                 btn_home.setBackgroundResource(R.drawable.icon_publications_selected);
                 btn_perfil.setBackgroundResource(R.drawable.icon_profile);
                 btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event);
+                btn_buscar_comunidades.setBackgroundResource(R.drawable.icon_search_community);
+                btn_mis_comunidades.setBackgroundResource(R.drawable.icon_community);
 
                 vista_inferior.removeAllViews();
                 vista_inferior.addView(view_publicaciones);
+            }
+        });
+
+        btn_mis_comunidades.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btn_home.setBackgroundResource(R.drawable.icon_publications);
+                btn_perfil.setBackgroundResource(R.drawable.icon_profile);
+                btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event);
+                btn_buscar_comunidades.setBackgroundResource(R.drawable.icon_search_community);
+                btn_mis_comunidades.setBackgroundResource(R.drawable.icon_community_selected);
+
+                vista_inferior.removeAllViews();
+                vista_inferior.addView(view_mis_comunidades);
             }
         });
 
@@ -97,6 +150,8 @@ public class Main extends AppCompatActivity {
                     btn_home.setBackgroundResource(R.drawable.icon_publications);
                     btn_perfil.setBackgroundResource(R.drawable.icon_profile);
                     btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event_selected);
+                    btn_buscar_comunidades.setBackgroundResource(R.drawable.icon_search_community);
+                    btn_mis_comunidades.setBackgroundResource(R.drawable.icon_community);
 
                     vista_inferior.removeAllViews();
                     vista_inferior.addView(view_buscar_evento);
@@ -105,20 +160,20 @@ public class Main extends AppCompatActivity {
             }
         });
 
-        btn_perfil.setOnClickListener(new View.OnClickListener() {
+        btn_buscar_comunidades.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*try {
-                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Constants.BSAS, 11f));
-                    mMap.addMarker(new MarkerOptions().position(new LatLng(-34.619950, -58.420246)).title("Evento").snippet("Shabbaton con los pibes"));
-                } catch (Exception e) {
-                }*/
-                btn_home.setBackgroundResource(R.drawable.icon_publications);
-                btn_perfil.setBackgroundResource(R.drawable.icon_profile_selected);
-                btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event);
+                try {
+                    btn_home.setBackgroundResource(R.drawable.icon_publications);
+                    btn_perfil.setBackgroundResource(R.drawable.icon_profile);
+                    btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event);
+                    btn_buscar_comunidades.setBackgroundResource(R.drawable.icon_search_community_selected);
+                    btn_mis_comunidades.setBackgroundResource(R.drawable.icon_community);
 
-                vista_inferior.removeAllViews();
-                vista_inferior.addView(view_perfil);
+                    vista_inferior.removeAllViews();
+                    vista_inferior.addView(view_buscar_comunidad);
+                }
+                catch (Exception e){}
             }
         });
 
@@ -127,6 +182,17 @@ public class Main extends AppCompatActivity {
             public void onClick(View view) {
                 Intent myIntent = new Intent(Main.this, Settings.class);
                 Main.this.startActivity(myIntent);
+            }
+        });
+        Button btn_inbox = ((Button) findViewById(R.id.btn_inbox));
+        btn_inbox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (usuario_actual.getUsuario().equals("chebita")) {
+                    Intent myIntent = new Intent(Main.this, Adm_com.class);
+                    myIntent.putExtra("usuario", usuario_actual.getUsuario());
+                    Main.this.startActivity(myIntent);
+                }
             }
         });
 
@@ -171,23 +237,85 @@ public class Main extends AppCompatActivity {
 
         // Cargo view_publicaciones
         ListView lista_publicaciones = (ListView)contexto.findViewById(R.id.lst_publicaciones);
-        lista_publicaciones.setAdapter(new MyAdapter(contexto, publicaciones));
+        lista_publicaciones.setAdapter(new AdapterViewPublicaciones(contexto, publicaciones));
     }
 
     public static void cargarViewPerfil(Main contexto)
     {
-        contexto.view_perfil = View.inflate(contexto, R.layout.perfil, null);
+        TextView lbl_nombre = (TextView)contexto.findViewById(R.id.view_perfil_lbl_nombre);
+        TextView lbl_apellido = (TextView)contexto.findViewById(R.id.view_perfil_lbl_apellido);
+        TextView lbl_apellido_madre = (TextView)contexto.findViewById(R.id.view_perfil_lbl_apellido_madre);
+        TextView lbl_comunidades = (TextView)contexto.findViewById(R.id.view_perfil_lbl_comunidades);
+        TextView lbl_email = (TextView)contexto.findViewById(R.id.view_perfil_lbl_email);
+        TextView lbl_sexo = (TextView)contexto.findViewById(R.id.view_perfil_lbl_sexo);
+        TextView lbl_telefono = (TextView)contexto.findViewById(R.id.view_perfil_lbl_telefono);
+        TextView lbl_nacimiento = (TextView)contexto.findViewById(R.id.view_perfil_lbl_nacimiento);
+
+        lbl_nombre.setText(contexto.usuario_actual.getNombre());
+        lbl_apellido.setText(contexto.usuario_actual.getApellido());
+        lbl_apellido_madre.setText(contexto.usuario_actual.getApellido_madre());
+        lbl_comunidades.setText("SD");
+        lbl_email.setText(contexto.usuario_actual.getEmail());
+        if(contexto.usuario_actual.getSexo() == Constants.SexoUsuario.HOMBRE)
+        {
+            lbl_sexo.setText("Man");
+        }else {
+            lbl_sexo.setText("Woman");
+        }
+        lbl_telefono.setText(String.valueOf(contexto.usuario_actual.getTelefono()));
+        lbl_nacimiento.setText(contexto.usuario_actual.getNacimiento());
+
+    }
+
+    public void cargarViewMisComunidades(Main contexto)
+    {
+        // Publicaciones
+        ArrayList<CComunidad> comunidades =  new ArrayList<CComunidad>();
+
+        for(int i = 0; i < 2; i++) {
+            CComunidad comunidad = CComunidad.generarComunidad();
+            comunidades.add(comunidad);
+        }
+
+        // Cargo view_publicaciones
+        ListView lista_publicaciones = (ListView)findViewById(R.id.lst_mis_comunidades);
+        lista_publicaciones.setAdapter(new AdapterViewMisComunidades(this, comunidades));
     }
 
     public static void cargarViewBuscarEventos(Main contexto) {
         try {
             contexto.fragmentManager = contexto.getFragmentManager();
-            contexto.view_buscar_evento = View.inflate(contexto, R.layout.view_buscar_evento, null);
-            mMap = ((MapFragment) contexto.fragmentManager.findFragmentById(R.id.map)).getMap();
+            mapa_eventos = ((MapFragment) contexto.fragmentManager.findFragmentById(R.id.view_buscar_evento_map)).getMap();
         }catch (Exception e){}
 
+        if(mapa_eventos != null){
+            CameraPosition cameraPosition = new CameraPosition.Builder().target(Constants.BSAS).zoom(12).bearing(0).tilt(45).build();
+            mapa_eventos.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+            mapa_eventos.addMarker(new MarkerOptions().position(Constants.BSAS).title("Shabbaton SD").snippet("22:00hs"));
+            mapa_eventos.addMarker(new MarkerOptions().position(new LatLng(-34.588258, -58.427869)).title("Purim").snippet("22:00hs"));
+            mapa_eventos.addMarker(new MarkerOptions().position(new LatLng(-34.620756, -58.407871)).title("Rikudim contest").snippet("20:30hs"));
+            mapa_eventos.addMarker(new MarkerOptions().position(new LatLng(-34.607900, -58.468811)).title("Cortada de prepucio gratuita").snippet("3:00hs"));
+
+        }
 
     }
 
+    public static void cargarViewBuscarComunidades(Main contexto) {
+        try {
+            contexto.fragmentManager = contexto.getFragmentManager();
+            mapa_comunidades = ((MapFragment) contexto.fragmentManager.findFragmentById(R.id.view_buscar_comunidad_map)).getMap();
+        }catch (Exception e){}
+
+        if(mapa_comunidades != null){
+            CameraPosition cameraPosition = new CameraPosition.Builder().target(Constants.BSAS).zoom(12).bearing(0).tilt(45).build();
+            mapa_comunidades.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+            mapa_comunidades.addMarker(new MarkerOptions().position(new LatLng(-34.596501, -58.481868)).title("Sucath David").snippet("54 members"));
+            mapa_comunidades.addMarker(new MarkerOptions().position(new LatLng(-34.605427, -58.450786)).title("Dor jaddash").snippet("256 members"));
+            mapa_comunidades.addMarker(new MarkerOptions().position(new LatLng(-34.595460, -58.419731)).title("Menora").snippet("115 members"));
+            mapa_comunidades.addMarker(new MarkerOptions().position(new LatLng(-34.560484, -58.465862)).title("Isej").snippet("99 members"));
+
+        }
+
+    }
 
 }

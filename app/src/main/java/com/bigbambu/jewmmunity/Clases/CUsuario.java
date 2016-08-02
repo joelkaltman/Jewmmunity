@@ -1,5 +1,9 @@
 package com.bigbambu.jewmmunity.Clases;
 
+import com.bigbambu.jewmmunity.Utiles.Constants;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -12,7 +16,10 @@ public class CUsuario {
     private String nombre;
     private String apellido;
     private String apellido_madre;
+    private String email;
     private int telefono;
+    private Date nacimiento;
+    private Constants.SexoUsuario sexo;
     private List<CComunidad> comunidades;
     private List<CEvento> eventos;
     private List<CUsuario> amigos;
@@ -27,6 +34,10 @@ public class CUsuario {
         retornar.setApellido("Perenovich");
         retornar.setApellido_madre("Lubtzcgigjhgvgajhgavich");
         retornar.setTelefono(44444444);
+        retornar.setEmail("juanpere@gmail.com");
+        retornar.setNacimiento("13/01/1994");
+        retornar.setSexo(Constants.SexoUsuario.HOMBRE);
+
         return retornar;
     }
 
@@ -108,5 +119,34 @@ public class CUsuario {
 
     public void setAmigos(List<CUsuario> amigos) {
         this.amigos = amigos;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getNacimiento() {
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        return format.format(nacimiento);
+    }
+
+    public void setNacimiento(String nacimiento) {
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            Date fecha = format.parse("13/01/1994");
+            this.nacimiento = fecha;
+        }catch (Exception e){}
+    }
+
+    public Constants.SexoUsuario getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(Constants.SexoUsuario sexo) {
+        this.sexo = sexo;
     }
 }
