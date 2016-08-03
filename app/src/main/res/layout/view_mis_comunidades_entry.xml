@@ -18,7 +18,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:gravity="center_vertical"
-                android:background="@drawable/default_photo">
+                android:background="#babfc1">
 
                 <TextView
                     android:id="@+id/view_mis_comunidades_nombre"
@@ -36,7 +36,9 @@
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="10dp">
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp">
 
                 <TableRow
                     android:layout_width="match_parent"
@@ -285,7 +287,7 @@
             <Button
                 style="@style/Base.Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_height="20dp"
                 android:text="edit info"
                 android:id="@+id/view_mis_comunidades_btn_editar"
                 android:background="#fabebebe"
@@ -296,7 +298,7 @@
             <Button
                 style="@style/Base.Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_height="20dp"
                 android:text="events"
                 android:id="@+id/view_mis_comunidades_eventos"
                 android:background="#fabebebe"
@@ -307,7 +309,7 @@
             <Button
                 style="@style/Base.Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_height="20dp"
                 android:text="Photos"
                 android:id="@+id/view_mis_comunidades_fotos"
                 android:background="#fabebebe"
