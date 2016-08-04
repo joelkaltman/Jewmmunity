@@ -7,32 +7,32 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListAdapter;
 
-import com.bigbambu.jewmmunity.Clases.CViaje;
+import com.bigbambu.jewmmunity.Clases.CGrupo;
 import com.bigbambu.jewmmunity.R;
 
 import java.util.ArrayList;
 
 /**
- * Created by Joel on 30-Jul-16.
+ * Created by Joel on 04-Aug-16.
  */
-public class AdapterViewBuscarViajes extends BaseAdapter implements ListAdapter {
+public class AdapterViewBuscarGrupos extends BaseAdapter implements ListAdapter {
 
     private Context context;
-    private ArrayList<CViaje> viajes;
+    private ArrayList<CGrupo> grupos;
 
-    public AdapterViewBuscarViajes(Context context, ArrayList<CViaje> mobiles) {
+    public AdapterViewBuscarGrupos(Context context, ArrayList<CGrupo> mobiles) {
         this.context = context;
-        this.viajes = mobiles;
+        this.grupos = mobiles;
     }
 
     @Override
     public int getCount() {
-        return viajes.size();
+        return grupos.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return viajes.get(position);
+        return grupos.get(position);
     }
 
     @Override
@@ -45,7 +45,7 @@ public class AdapterViewBuscarViajes extends BaseAdapter implements ListAdapter 
 
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = (View) inflater.inflate(R.layout.view_buscar_viaje_entry, null);
+            convertView = (View) inflater.inflate(R.layout.view_buscar_grupo_entry, null);
         }
 
         return convertView;

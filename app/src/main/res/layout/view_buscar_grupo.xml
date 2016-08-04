@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:background="#0260b2">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:background="#004e96">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Groups"
+                android:id="@+id/textView"
+                android:textColor="#ffffff"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="right">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|right">
+
+                    <EditText
+                        android:layout_width="100dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/view_buscar_grupo_txt_buscar"
+                        android:layout_alignParentTop="true"
+                        android:layout_toLeftOf="@+id/view_buscar_grupo_btn_buscar"
+                        android:layout_toStartOf="@+id/view_buscar_grupo_btn_buscar"
+                        android:background="@drawable/login_textbar"
+                        android:layout_margin="5dp" />
+
+                    <Button
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/view_buscar_grupo_btn_buscar"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/icon_search"
+                        android:textColor="#086ab2"
+                        android:textStyle="bold"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginBottom="5dp" />
+
+                    <Button
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="Create"
+                        android:id="@+id/view_buscar_grupo_btn_crear"
+                        android:background="@drawable/login_button"
+                        android:textColor="#086ab2"
+                        android:textStyle="bold"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="5dp" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="0dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="0dp">
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/view_buscar_grupo_lst_grupos"
+                android:layout_weight="1"
+                android:background="#0260b2"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

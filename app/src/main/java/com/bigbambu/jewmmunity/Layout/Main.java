@@ -15,10 +15,12 @@ import android.widget.TextView;
 
 import com.bigbambu.jewmmunity.Clases.CComunidad;
 import com.bigbambu.jewmmunity.Clases.CEvento;
+import com.bigbambu.jewmmunity.Clases.CGrupo;
 import com.bigbambu.jewmmunity.Clases.CPublicacion;
 import com.bigbambu.jewmmunity.Clases.CUsuario;
 import com.bigbambu.jewmmunity.Clases.CViaje;
 import com.bigbambu.jewmmunity.R;
+import com.bigbambu.jewmmunity.Utiles.AdapterViewBuscarGrupos;
 import com.bigbambu.jewmmunity.Utiles.AdapterViewBuscarViajes;
 import com.bigbambu.jewmmunity.Utiles.AdapterViewMisComunidades;
 import com.bigbambu.jewmmunity.Utiles.AdapterViewMisEventos;
@@ -45,6 +47,7 @@ public class Main extends AppCompatActivity {
     ImageButton btn_buscar_eventos;
     ImageButton btn_buscar_comunidades;
     ImageButton btn_buscar_viajes;
+    ImageButton btn_buscar_grupos;
     Button btn_settings;
     FragmentManager fragmentManager;
     private static GoogleMap mapa_eventos;
@@ -57,6 +60,7 @@ public class Main extends AppCompatActivity {
     View view_buscar_evento;
     View view_buscar_comunidad;
     View view_buscar_viajes;
+    View view_buscar_grupos;
 
     CUsuario usuario_actual;
 
@@ -79,6 +83,7 @@ public class Main extends AppCompatActivity {
         btn_buscar_eventos = (ImageButton) findViewById(R.id.btn_buscar_eventos);
         btn_buscar_comunidades = (ImageButton) findViewById(R.id.btn_buscar_comunidades);
         btn_buscar_viajes = (ImageButton) findViewById(R.id.btn_buscar_viajes);
+        btn_buscar_grupos = (ImageButton) findViewById(R.id.btn_buscar_grupos);
         btn_settings = (Button) findViewById(R.id.btn_settings);
 
 
@@ -99,12 +104,14 @@ public class Main extends AppCompatActivity {
         view_perfil = View.inflate(contexto, R.layout.view_perfil, null);
         view_buscar_evento = View.inflate(contexto, R.layout.view_buscar_evento, null);
         view_buscar_comunidad = View.inflate(contexto, R.layout.view_buscar_comunidad, null);
-        view_buscar_viajes = View.inflate(contexto, R.layout.view_buscar_viajes, null);
+        view_buscar_viajes = View.inflate(contexto, R.layout.view_buscar_viaje, null);
+        view_buscar_grupos = View.inflate(contexto, R.layout.view_buscar_grupo, null);
 
         vista_inferior.removeAllViews();
         vista_inferior.addView(view_mis_comunidades);
         vista_inferior.addView(view_mis_eventos);
         vista_inferior.addView(view_buscar_viajes);
+        vista_inferior.addView(view_buscar_grupos);
         vista_inferior.addView(view_perfil);
         vista_inferior.addView(view_publicaciones);
 
@@ -115,7 +122,11 @@ public class Main extends AppCompatActivity {
         cargarViewBuscarEventos(contexto);
         cargarViewBuscarComunidades(contexto);
         cargarViewBuscarViajes(contexto);
+        cargarViewBuscarGrupos(contexto);
 
+        vista_inferior.removeAllViews();
+        vista_inferior.addView(view_publicaciones);
+        
         btn_perfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -124,6 +135,7 @@ public class Main extends AppCompatActivity {
                 btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event);
                 btn_buscar_comunidades.setBackgroundResource(R.drawable.icon_search_community);
                 btn_buscar_viajes.setBackgroundResource(R.drawable.icon_travel);
+                btn_buscar_grupos.setBackgroundResource(R.drawable.icon_forum);
                 btn_mis_comunidades.setBackgroundResource(R.drawable.icon_community);
                 btn_mis_eventos.setBackgroundResource(R.drawable.icon_event);
 
@@ -141,6 +153,7 @@ public class Main extends AppCompatActivity {
                 btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event);
                 btn_buscar_comunidades.setBackgroundResource(R.drawable.icon_search_community);
                 btn_buscar_viajes.setBackgroundResource(R.drawable.icon_travel);
+                btn_buscar_grupos.setBackgroundResource(R.drawable.icon_forum);
                 btn_mis_comunidades.setBackgroundResource(R.drawable.icon_community);
                 btn_mis_eventos.setBackgroundResource(R.drawable.icon_event);
 
@@ -157,6 +170,7 @@ public class Main extends AppCompatActivity {
                 btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event);
                 btn_buscar_comunidades.setBackgroundResource(R.drawable.icon_search_community);
                 btn_buscar_viajes.setBackgroundResource(R.drawable.icon_travel);
+                btn_buscar_grupos.setBackgroundResource(R.drawable.icon_forum);
                 btn_mis_comunidades.setBackgroundResource(R.drawable.icon_community_selected);
                 btn_mis_eventos.setBackgroundResource(R.drawable.icon_event);
 
@@ -173,6 +187,7 @@ public class Main extends AppCompatActivity {
                 btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event);
                 btn_buscar_comunidades.setBackgroundResource(R.drawable.icon_search_community);
                 btn_buscar_viajes.setBackgroundResource(R.drawable.icon_travel);
+                btn_buscar_grupos.setBackgroundResource(R.drawable.icon_forum);
                 btn_mis_comunidades.setBackgroundResource(R.drawable.icon_community);
                 btn_mis_eventos.setBackgroundResource(R.drawable.icon_event_selected);
 
@@ -190,6 +205,7 @@ public class Main extends AppCompatActivity {
                     btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event_selected);
                     btn_buscar_comunidades.setBackgroundResource(R.drawable.icon_search_community);
                     btn_buscar_viajes.setBackgroundResource(R.drawable.icon_travel);
+                    btn_buscar_grupos.setBackgroundResource(R.drawable.icon_forum);
                     btn_mis_comunidades.setBackgroundResource(R.drawable.icon_community);
                     btn_mis_eventos.setBackgroundResource(R.drawable.icon_event);
 
@@ -209,6 +225,7 @@ public class Main extends AppCompatActivity {
                     btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event);
                     btn_buscar_comunidades.setBackgroundResource(R.drawable.icon_search_community_selected);
                     btn_buscar_viajes.setBackgroundResource(R.drawable.icon_travel);
+                    btn_buscar_grupos.setBackgroundResource(R.drawable.icon_forum);
                     btn_mis_comunidades.setBackgroundResource(R.drawable.icon_community);
                     btn_mis_eventos.setBackgroundResource(R.drawable.icon_event);
 
@@ -228,11 +245,32 @@ public class Main extends AppCompatActivity {
                     btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event);
                     btn_buscar_comunidades.setBackgroundResource(R.drawable.icon_search_community);
                     btn_buscar_viajes.setBackgroundResource(R.drawable.icon_travel_selected);
+                    btn_buscar_grupos.setBackgroundResource(R.drawable.icon_forum);
                     btn_mis_comunidades.setBackgroundResource(R.drawable.icon_community);
                     btn_mis_eventos.setBackgroundResource(R.drawable.icon_event);
 
                     vista_inferior.removeAllViews();
                     vista_inferior.addView(view_buscar_viajes);
+                }
+                catch (Exception e){}
+            }
+        });
+
+        btn_buscar_grupos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    btn_home.setBackgroundResource(R.drawable.icon_publications);
+                    btn_perfil.setBackgroundResource(R.drawable.icon_profile);
+                    btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event);
+                    btn_buscar_comunidades.setBackgroundResource(R.drawable.icon_search_community);
+                    btn_buscar_viajes.setBackgroundResource(R.drawable.icon_travel);
+                    btn_buscar_grupos.setBackgroundResource(R.drawable.icon_forum_selected);
+                    btn_mis_comunidades.setBackgroundResource(R.drawable.icon_community);
+                    btn_mis_eventos.setBackgroundResource(R.drawable.icon_event);
+
+                    vista_inferior.removeAllViews();
+                    vista_inferior.addView(view_buscar_grupos);
                 }
                 catch (Exception e){}
             }
@@ -403,8 +441,21 @@ public class Main extends AppCompatActivity {
         }
 
         // Cargo view_publicaciones
-        ListView lista_eventos = (ListView)findViewById(R.id.view_buscar_viajes_lst_viajes);
-        lista_eventos.setAdapter(new AdapterViewBuscarViajes(this, viajes));
+        ListView lista_viajes = (ListView)findViewById(R.id.view_buscar_viajes_lst_viajes);
+        lista_viajes.setAdapter(new AdapterViewBuscarViajes(this, viajes));
     }
 
+    public void cargarViewBuscarGrupos(Main contexto)
+    {
+        // Publicaciones
+        ArrayList<CGrupo> grupos =  new ArrayList<CGrupo>();
+
+        for(int i = 0; i < 20; i++) {
+            grupos.add(new CGrupo());
+        }
+
+        // Cargo view_publicaciones
+        ListView lista_grupos = (ListView)findViewById(R.id.view_buscar_grupo_lst_grupos);
+        lista_grupos.setAdapter(new AdapterViewBuscarGrupos(this, grupos));
+    }
 }
