@@ -182,7 +182,7 @@
                 <ImageButton
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:id="@+id/btn_viaje"
+                    android:id="@+id/btn_buscar_viajes"
                     android:background="@drawable/icon_travel"
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="20dp"

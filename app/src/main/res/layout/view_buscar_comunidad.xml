@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:gravity="center_horizontal">
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        class="com.google.android.gms.maps.MapFragment"
+        android:id="@+id/view_buscar_comunidad_map" />
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="bottom"
-        android:background="#0260b2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true">
 
@@ -22,13 +27,6 @@
             android:textColor="#086ab2"
             android:textStyle="bold"
             android:layout_margin="5dp" />
-
-        <fragment
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            class="com.google.android.gms.maps.MapFragment"
-            android:id="@+id/view_buscar_comunidad_map" />
-
     </LinearLayout>
 
 </RelativeLayout>
