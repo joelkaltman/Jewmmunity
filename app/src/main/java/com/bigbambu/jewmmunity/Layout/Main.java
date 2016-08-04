@@ -172,7 +172,7 @@ public class Main extends AppCompatActivity {
                 btn_perfil.setBackgroundResource(R.drawable.icon_profile);
                 btn_buscar_eventos.setBackgroundResource(R.drawable.icon_search_event);
                 btn_buscar_comunidades.setBackgroundResource(R.drawable.icon_search_community);
-                btn_buscar_comunidades.setBackgroundResource(R.drawable.icon_travel);
+                btn_buscar_viajes.setBackgroundResource(R.drawable.icon_travel);
                 btn_mis_comunidades.setBackgroundResource(R.drawable.icon_community);
                 btn_mis_eventos.setBackgroundResource(R.drawable.icon_event_selected);
 
