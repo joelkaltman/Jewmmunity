@@ -1,0 +1,1400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#0260b2">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:background="#004e96">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Exchange"
+                android:id="@+id/textView"
+                android:textColor="#ffffff"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView2" >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 - 200 Points"
+                    android:id="@+id/textView37"
+                    android:textColor="#ffffff"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp" />
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/horizontalScrollView4" >
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="#ffffff" >
+
+                            <ImageView
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:id="@+id/imageView24"
+                                android:background="@drawable/default_photo" />
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" >
+
+                                <TextView
+                                    android:id="@+id/adf"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="14dp"
+                                    android:text="Objeto1"
+                                    android:textColor="#919191"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginLeft="5dp" />
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="5dp" >
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:id="@+id/dghd"
+                                        android:background="@drawable/icon_maguen_david" />
+
+                                    <TextView
+                                        android:id="@+id/dagh"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="14dp"
+                                        android:text="100 Points"
+                                        android:textColor="#919191"
+                                        android:layout_marginLeft="5dp" />
+                                </LinearLayout>
+
+                                <Button
+                                    style="@style/Widget.AppCompat.Button.Borderless"
+                                    android:layout_width="60dp"
+                                    android:layout_height="20dp"
+                                    android:text="Get"
+                                    android:id="@+id/dahdagh"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@drawable/login_button"
+                                    android:textColor="#086ab2"
+                                    android:textStyle="bold"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:textSize="12dp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="#ffffff" >
+
+                            <ImageView
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:id="@+id/imageView25"
+                                android:background="@drawable/default_photo" />
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" >
+
+                                <TextView
+                                    android:id="@+id/textView35"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="14dp"
+                                    android:text="Objeto1"
+                                    android:textColor="#919191"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginLeft="5dp" />
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="5dp" >
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:id="@+id/imageView20"
+                                        android:background="@drawable/icon_maguen_david" />
+
+                                    <TextView
+                                        android:id="@+id/textView33"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="14dp"
+                                        android:text="100 Points"
+                                        android:textColor="#919191"
+                                        android:layout_marginLeft="5dp" />
+                                </LinearLayout>
+
+                                <Button
+                                    style="@style/Widget.AppCompat.Button.Borderless"
+                                    android:layout_width="60dp"
+                                    android:layout_height="20dp"
+                                    android:text="Get"
+                                    android:id="@+id/button4"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@drawable/login_button"
+                                    android:textColor="#086ab2"
+                                    android:textStyle="bold"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:textSize="12dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="#ffffff" >
+
+                            <ImageView
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:id="@+id/imageView15"
+                                android:background="@drawable/default_photo" />
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" >
+
+                                <TextView
+                                    android:id="@+id/textView25"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="14dp"
+                                    android:text="Objeto1"
+                                    android:textColor="#919191"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginLeft="5dp" />
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="5dp" >
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:id="@+id/imageView16"
+                                        android:background="@drawable/icon_maguen_david" />
+
+                                    <TextView
+                                        android:id="@+id/textView27"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="14dp"
+                                        android:text="100 Points"
+                                        android:textColor="#919191"
+                                        android:layout_marginLeft="5dp" />
+                                </LinearLayout>
+
+                                <Button
+                                    style="@style/Widget.AppCompat.Button.Borderless"
+                                    android:layout_width="60dp"
+                                    android:layout_height="20dp"
+                                    android:text="Get"
+                                    android:id="@+id/button2"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@drawable/login_button"
+                                    android:textColor="#086ab2"
+                                    android:textStyle="bold"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:textSize="12dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="#ffffff">
+
+                            <ImageView
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:id="@+id/imageView14"
+                                android:background="@drawable/default_photo" />
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/textView40"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="14dp"
+                                    android:text="Objeto1"
+                                    android:textColor="#919191"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginLeft="5dp" />
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="5dp">
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:id="@+id/img_star"
+                                        android:background="@drawable/icon_maguen_david" />
+
+                                    <TextView
+                                        android:id="@+id/textView18"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="14dp"
+                                        android:text="100 Points"
+                                        android:textColor="#919191"
+                                        android:layout_marginLeft="5dp" />
+                                </LinearLayout>
+
+                                <Button
+                                    style="@style/Widget.AppCompat.Button.Borderless"
+                                    android:layout_width="60dp"
+                                    android:layout_height="20dp"
+                                    android:text="Get"
+                                    android:id="@+id/button"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@drawable/login_button"
+                                    android:textColor="#086ab2"
+                                    android:textStyle="bold"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:textSize="12dp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="#ffffff" >
+
+                            <ImageView
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:id="@+id/imageView6"
+                                android:background="@drawable/default_photo" />
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" >
+
+                                <TextView
+                                    android:id="@+id/sdgsdfg9"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="14dp"
+                                    android:text="Objeto1"
+                                    android:textColor="#919191"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginLeft="5dp" />
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="5dp" >
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:id="@+id/dfgdfg"
+                                        android:background="@drawable/icon_maguen_david" />
+
+                                    <TextView
+                                        android:id="@+id/adfgfsg"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="14dp"
+                                        android:text="100 Points"
+                                        android:textColor="#919191"
+                                        android:layout_marginLeft="5dp" />
+                                </LinearLayout>
+
+                                <Button
+                                    style="@style/Widget.AppCompat.Button.Borderless"
+                                    android:layout_width="60dp"
+                                    android:layout_height="20dp"
+                                    android:text="Get"
+                                    android:id="@+id/fghsh"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@drawable/login_button"
+                                    android:textColor="#086ab2"
+                                    android:textStyle="bold"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:textSize="12dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="#ffffff" >
+
+                            <ImageView
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:id="@+id/imageView17"
+                                android:background="@drawable/default_photo" />
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" >
+
+                                <TextView
+                                    android:id="@+id/textView29"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="14dp"
+                                    android:text="Objeto1"
+                                    android:textColor="#919191"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginLeft="5dp" />
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="5dp" >
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:id="@+id/imageView18"
+                                        android:background="@drawable/icon_maguen_david" />
+
+                                    <TextView
+                                        android:id="@+id/textView31"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="14dp"
+                                        android:text="100 Points"
+                                        android:textColor="#919191"
+                                        android:layout_marginLeft="5dp" />
+                                </LinearLayout>
+
+                                <Button
+                                    style="@style/Widget.AppCompat.Button.Borderless"
+                                    android:layout_width="60dp"
+                                    android:layout_height="20dp"
+                                    android:text="Get"
+                                    android:id="@+id/button3"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@drawable/login_button"
+                                    android:textColor="#086ab2"
+                                    android:textStyle="bold"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:textSize="12dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="200 - 1000 Points"
+                    android:id="@+id/aghdgh"
+                    android:textColor="#ffffff"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp" />
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/horizontalScrollView5" >
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="#ffffff" >
+
+                            <ImageView
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:id="@+id/imageView19"
+                                android:background="@drawable/default_photo" />
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" >
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="5dp" >
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:id="@+id/imageView21"
+                                        android:background="@drawable/icon_maguen_david" />
+
+                                    <TextView
+                                        android:id="@+id/textView39"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="14dp"
+                                        android:text="100 Points"
+                                        android:textColor="#919191"
+                                        android:layout_marginLeft="5dp" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/textView38"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="14dp"
+                                    android:text="Objeto1"
+                                    android:textColor="#919191"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginLeft="5dp" />
+
+                                <Button
+                                    style="@style/Widget.AppCompat.Button.Borderless"
+                                    android:layout_width="60dp"
+                                    android:layout_height="20dp"
+                                    android:text="Get"
+                                    android:id="@+id/button5"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@drawable/login_button"
+                                    android:textColor="#086ab2"
+                                    android:textStyle="bold"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:textSize="12dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="#ffffff" >
+
+                            <ImageView
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:id="@+id/imageView22"
+                                android:background="@drawable/default_photo" />
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" >
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="5dp" >
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:id="@+id/imageView23"
+                                        android:background="@drawable/icon_maguen_david" />
+
+                                    <TextView
+                                        android:id="@+id/textView42"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="14dp"
+                                        android:text="100 Points"
+                                        android:textColor="#919191"
+                                        android:layout_marginLeft="5dp" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/textView41"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="14dp"
+                                    android:text="Objeto1"
+                                    android:textColor="#919191"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginLeft="5dp" />
+
+                                <Button
+                                    style="@style/Widget.AppCompat.Button.Borderless"
+                                    android:layout_width="60dp"
+                                    android:layout_height="20dp"
+                                    android:text="Get"
+                                    android:id="@+id/button6"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@drawable/login_button"
+                                    android:textColor="#086ab2"
+                                    android:textStyle="bold"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:textSize="12dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="#ffffff" >
+
+                            <ImageView
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:id="@+id/imageView26"
+                                android:background="@drawable/default_photo" />
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" >
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="5dp" >
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:id="@+id/imageView27"
+                                        android:background="@drawable/icon_maguen_david" />
+
+                                    <TextView
+                                        android:id="@+id/textView44"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="14dp"
+                                        android:text="100 Points"
+                                        android:textColor="#919191"
+                                        android:layout_marginLeft="5dp" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/textView43"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="14dp"
+                                    android:text="Objeto1"
+                                    android:textColor="#919191"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginLeft="5dp" />
+
+                                <Button
+                                    style="@style/Widget.AppCompat.Button.Borderless"
+                                    android:layout_width="60dp"
+                                    android:layout_height="20dp"
+                                    android:text="Get"
+                                    android:id="@+id/button7"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@drawable/login_button"
+                                    android:textColor="#086ab2"
+                                    android:textStyle="bold"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:textSize="12dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="#ffffff" >
+
+                            <ImageView
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:id="@+id/imageView28"
+                                android:background="@drawable/default_photo" />
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" >
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="5dp" >
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:id="@+id/imageView29"
+                                        android:background="@drawable/icon_maguen_david" />
+
+                                    <TextView
+                                        android:id="@+id/textView46"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="14dp"
+                                        android:text="100 Points"
+                                        android:textColor="#919191"
+                                        android:layout_marginLeft="5dp" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/textView45"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="14dp"
+                                    android:text="Objeto1"
+                                    android:textColor="#919191"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginLeft="5dp" />
+
+                                <Button
+                                    style="@style/Widget.AppCompat.Button.Borderless"
+                                    android:layout_width="60dp"
+                                    android:layout_height="20dp"
+                                    android:text="Get"
+                                    android:id="@+id/button8"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@drawable/login_button"
+                                    android:textColor="#086ab2"
+                                    android:textStyle="bold"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:textSize="12dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="#ffffff" >
+
+                            <ImageView
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:id="@+id/imageView30"
+                                android:background="@drawable/default_photo" />
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" >
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="5dp" >
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:id="@+id/imageView31"
+                                        android:background="@drawable/icon_maguen_david" />
+
+                                    <TextView
+                                        android:id="@+id/textView48"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="14dp"
+                                        android:text="100 Points"
+                                        android:textColor="#919191"
+                                        android:layout_marginLeft="5dp" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/textView47"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="14dp"
+                                    android:text="Objeto1"
+                                    android:textColor="#919191"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginLeft="5dp" />
+
+                                <Button
+                                    style="@style/Widget.AppCompat.Button.Borderless"
+                                    android:layout_width="60dp"
+                                    android:layout_height="20dp"
+                                    android:text="Get"
+                                    android:id="@+id/button9"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@drawable/login_button"
+                                    android:textColor="#086ab2"
+                                    android:textStyle="bold"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:textSize="12dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="#ffffff" >
+
+                            <ImageView
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:id="@+id/imageView32"
+                                android:background="@drawable/default_photo" />
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" >
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="5dp" >
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:id="@+id/imageView33"
+                                        android:background="@drawable/icon_maguen_david" />
+
+                                    <TextView
+                                        android:id="@+id/textView50"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="14dp"
+                                        android:text="100 Points"
+                                        android:textColor="#919191"
+                                        android:layout_marginLeft="5dp" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/textView49"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="14dp"
+                                    android:text="Objeto1"
+                                    android:textColor="#919191"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginLeft="5dp" />
+
+                                <Button
+                                    style="@style/Widget.AppCompat.Button.Borderless"
+                                    android:layout_width="60dp"
+                                    android:layout_height="20dp"
+                                    android:text="Get"
+                                    android:id="@+id/button10"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@drawable/login_button"
+                                    android:textColor="#086ab2"
+                                    android:textStyle="bold"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:textSize="12dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1000 - 5000 Points"
+                    android:id="@+id/adfgw51"
+                    android:textColor="#ffffff"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp" />
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/horizontalScrollView6" >
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="#ffffff" >
+
+                            <ImageView
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:id="@+id/imageView34"
+                                android:background="@drawable/default_photo" />
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" >
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="5dp" >
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:id="@+id/imageView35"
+                                        android:background="@drawable/icon_maguen_david" />
+
+                                    <TextView
+                                        android:id="@+id/textView51"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="14dp"
+                                        android:text="100 Points"
+                                        android:textColor="#919191"
+                                        android:layout_marginLeft="5dp" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/textView52"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="14dp"
+                                    android:text="Objeto1"
+                                    android:textColor="#919191"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginLeft="5dp" />
+
+                                <Button
+                                    style="@style/Widget.AppCompat.Button.Borderless"
+                                    android:layout_width="60dp"
+                                    android:layout_height="20dp"
+                                    android:text="Get"
+                                    android:id="@+id/button11"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@drawable/login_button"
+                                    android:textColor="#086ab2"
+                                    android:textStyle="bold"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:textSize="12dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="#ffffff" >
+
+                            <ImageView
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:id="@+id/imageView36"
+                                android:background="@drawable/default_photo" />
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" >
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="5dp" >
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:id="@+id/imageView37"
+                                        android:background="@drawable/icon_maguen_david" />
+
+                                    <TextView
+                                        android:id="@+id/textView53"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="14dp"
+                                        android:text="100 Points"
+                                        android:textColor="#919191"
+                                        android:layout_marginLeft="5dp" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/textView54"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="14dp"
+                                    android:text="Objeto1"
+                                    android:textColor="#919191"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginLeft="5dp" />
+
+                                <Button
+                                    style="@style/Widget.AppCompat.Button.Borderless"
+                                    android:layout_width="60dp"
+                                    android:layout_height="20dp"
+                                    android:text="Get"
+                                    android:id="@+id/button12"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@drawable/login_button"
+                                    android:textColor="#086ab2"
+                                    android:textStyle="bold"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:textSize="12dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="#ffffff" >
+
+                            <ImageView
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:id="@+id/imageView38"
+                                android:background="@drawable/default_photo" />
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" >
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="5dp" >
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:id="@+id/imageView39"
+                                        android:background="@drawable/icon_maguen_david" />
+
+                                    <TextView
+                                        android:id="@+id/textView55"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="14dp"
+                                        android:text="100 Points"
+                                        android:textColor="#919191"
+                                        android:layout_marginLeft="5dp" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/textView56"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="14dp"
+                                    android:text="Objeto1"
+                                    android:textColor="#919191"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginLeft="5dp" />
+
+                                <Button
+                                    style="@style/Widget.AppCompat.Button.Borderless"
+                                    android:layout_width="60dp"
+                                    android:layout_height="20dp"
+                                    android:text="Get"
+                                    android:id="@+id/button13"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@drawable/login_button"
+                                    android:textColor="#086ab2"
+                                    android:textStyle="bold"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:textSize="12dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="#ffffff" >
+
+                            <ImageView
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:id="@+id/imageView40"
+                                android:background="@drawable/default_photo" />
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" >
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="5dp" >
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:id="@+id/imageView41"
+                                        android:background="@drawable/icon_maguen_david" />
+
+                                    <TextView
+                                        android:id="@+id/textView57"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="14dp"
+                                        android:text="100 Points"
+                                        android:textColor="#919191"
+                                        android:layout_marginLeft="5dp" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/textView58"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="14dp"
+                                    android:text="Objeto1"
+                                    android:textColor="#919191"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginLeft="5dp" />
+
+                                <Button
+                                    style="@style/Widget.AppCompat.Button.Borderless"
+                                    android:layout_width="60dp"
+                                    android:layout_height="20dp"
+                                    android:text="Get"
+                                    android:id="@+id/button14"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@drawable/login_button"
+                                    android:textColor="#086ab2"
+                                    android:textStyle="bold"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:textSize="12dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="#ffffff" >
+
+                            <ImageView
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:id="@+id/imageView42"
+                                android:background="@drawable/default_photo" />
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" >
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="5dp" >
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:id="@+id/imageView43"
+                                        android:background="@drawable/icon_maguen_david" />
+
+                                    <TextView
+                                        android:id="@+id/textView59"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="14dp"
+                                        android:text="100 Points"
+                                        android:textColor="#919191"
+                                        android:layout_marginLeft="5dp" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/textView60"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="14dp"
+                                    android:text="Objeto1"
+                                    android:textColor="#919191"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginLeft="5dp" />
+
+                                <Button
+                                    style="@style/Widget.AppCompat.Button.Borderless"
+                                    android:layout_width="60dp"
+                                    android:layout_height="20dp"
+                                    android:text="Get"
+                                    android:id="@+id/button15"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@drawable/login_button"
+                                    android:textColor="#086ab2"
+                                    android:textStyle="bold"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:textSize="12dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="#ffffff" >
+
+                            <ImageView
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:id="@+id/imageView44"
+                                android:background="@drawable/default_photo" />
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" >
+
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="5dp" >
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:id="@+id/imageView45"
+                                        android:background="@drawable/icon_maguen_david" />
+
+                                    <TextView
+                                        android:id="@+id/textView61"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="14dp"
+                                        android:text="100 Points"
+                                        android:textColor="#919191"
+                                        android:layout_marginLeft="5dp" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/textView62"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="14dp"
+                                    android:text="Objeto1"
+                                    android:textColor="#919191"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginLeft="5dp" />
+
+                                <Button
+                                    style="@style/Widget.AppCompat.Button.Borderless"
+                                    android:layout_width="60dp"
+                                    android:layout_height="20dp"
+                                    android:text="Get"
+                                    android:id="@+id/button16"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@drawable/login_button"
+                                    android:textColor="#086ab2"
+                                    android:textStyle="bold"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:textSize="12dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>
